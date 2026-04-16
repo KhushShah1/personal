@@ -51,7 +51,7 @@ export default function Home() {
               <a
                 href="https://cmuaisafety.com"
                 target="_blank"
-                className="cursor-alias rounded text-warm-900 decoration-wavy underline-offset-4 decoration-sky-400 focus-visible:ring-4 focus-visible:ring-blue-200 focus:underline hover:underline"
+                className="cursor-alias rounded text-warm-900 underline decoration-warm-900 decoration-1 underline-offset-4 hover:decoration-wavy hover:decoration-sky-400 hover:decoration-2 focus-visible:ring-4 focus-visible:ring-blue-200"
               >
                 CASI
               </a>
@@ -59,7 +59,7 @@ export default function Home() {
               <a
                 href="https://cmucourses.com"
                 target="_blank"
-                className="cursor-alias rounded text-warm-900 decoration-wavy underline-offset-4 decoration-orange-400 focus-visible:ring-4 focus-visible:ring-blue-200 focus:underline hover:underline"
+                className="cursor-alias rounded text-warm-900 underline decoration-warm-900 decoration-1 underline-offset-4 hover:decoration-wavy hover:decoration-orange-400 hover:decoration-2 focus-visible:ring-4 focus-visible:ring-blue-200"
               >
                 CMU Courses
               </a>{" "}
@@ -67,13 +67,13 @@ export default function Home() {
               <a
                 href="https://scottylabs.org"
                 target="_blank"
-                className="cursor-alias rounded text-warm-900 decoration-wavy underline-offset-4 decoration-purple-400 focus-visible:ring-4 focus-visible:ring-blue-200 focus:underline hover:underline"
+                className="cursor-alias rounded text-warm-900 underline decoration-warm-900 decoration-1 underline-offset-4 hover:decoration-wavy hover:decoration-purple-400 hover:decoration-2 focus-visible:ring-4 focus-visible:ring-blue-200"
               >
                 ScottyLabs
               </a>
               , and try to get up a bunch more{" "}
               <a
-                className="rounded text-warm-900 underline-offset-4 decoration-lime-400 focus-visible:ring-4 focus-visible:ring-blue-200 focus:underline hover:underline"
+                className="rounded text-warm-900 underline decoration-warm-900 decoration-1 underline-offset-4 hover:decoration-lime-400 hover:decoration-2 focus-visible:ring-4 focus-visible:ring-blue-200"
                 href="/projects"
               >
                 cool stuff
