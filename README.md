@@ -5,7 +5,7 @@
 **ML Researcher | CS & Math @ CMU | Builder**
 
 [![Website](https://img.shields.io/badge/Website-khush.site-blue?style=for-the-badge&logo=google-chrome&logoColor=white)](https://khush.site)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-khush--shah-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/khush--shah)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-khush-ㅤ-shah-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/khush--shah)
 [![Email](https://img.shields.io/badge/Email-khushs%40cmu.edu-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:khushs@cmu.edu)
 
 </div>
