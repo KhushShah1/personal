@@ -30,7 +30,7 @@ export default function Home() {
         {/* Hero intro */}
         <div className="px-1 pb-2 animate-card">
           <div className="h-full w-full px-4 pt-6 sm:px-8 sm:pt-6">
-            <h1 className="font-serif-variation font-serif text-2xl font-light !leading-tight text-warm-500 sm:text-3xl lg:text-4xl">
+            <h1 className="font-serif-variation font-serif text-2xl font-light !leading-tight text-warm-600 sm:text-3xl lg:text-4xl">
               Hey there, I&apos;m{" "}
               <span className="text-warm-900">Khush</span> 👋 Welcome to
               my{" "}
@@ -83,8 +83,8 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="px-10 pt-2 pb-10">
-          <div className="aspect-square">
+        <div className="px-4 pt-2 pb-10 sm:pb-[10px]">
+          <div className="aspect-square sm:aspect-auto sm:h-[calc(100vh-130px)]">
             <div className="group h-full w-full overflow-hidden rounded-lg bg-warm-200 transition-colors hover:bg-warm-300 animate-card" style={{ animationDelay: "50ms" }}>
               <div className="relative isolate flex h-full w-full flex-col">
                 <div className="flex items-center justify-between rounded-t-lg bg-warm-300 pl-4 pr-2 pt-2 text-base tracking-tight text-warm-700">
