@@ -22,12 +22,12 @@ I love learning across fields, and I think the best ideas tend to come from putt
 
 ## This Website
 
-A personal site on who I am, some stuff I've done, things I've built, and what I'm thinking about — all made from scratch.
+A personal site on who I am, some stuff I've done, things I've built, and what I'm thinking about - all made from scratch.
 
 ---
 
 <div align="center">
 
-**Found a bug? [Let me know!](mailto:khushs@cmu.edu)** — I have made it all from scratch, after all.
+**Found a bug? [Let me know!](mailto:khushs@cmu.edu)**
 
 </div>
