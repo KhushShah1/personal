@@ -12,7 +12,7 @@
 
 ## About Me
 
-Hi! My name is Khush, and I'm an ML researcher, computer science student, mathematician, and software developer.
+Hi! My name is Khush, and I'm a ML researcher, computer science student, mathematician, and software developer.
 
 Most of my time right now goes to my CS and Math classes at CMU, and a bunch of different technical AI safety research. The biggest thing I'm working on is a project at the [Carnegie AI Safety Initiative (CASI)](https://cmuaisafety.com) on the fragility of LLM safety training. I think AI safety is one of the most important problems humanity will face this decade, maybe the most important, and I'm obsessed with doing my part to ensure we get it right.
 
