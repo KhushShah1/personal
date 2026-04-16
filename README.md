@@ -18,16 +18,16 @@ Most of my time right now goes to my CS and Math classes at CMU, and a bunch of 
 
 Outside of research, I love to build. I'm a full-stack dev on [cmucourses.com](https://cmucourses.com), a tool used by thousands of CMU students, where I work across Rust, Python, SQL, JS, and TypeScript. I've done a handful of hackathons (not just for the prizes), picked up competitive programming for fun, and spent enough time with low-level and systems stuff to be comfortable with just about anything CS-related.
 
-I love learning across fields, and I think the best ideas tend to come from putting wildly different things together in unique and innovative ways. I always try to develop a deep fundamental understanding of whatever I'm working on — whether that's LLM internals, abstract math proofs, or anything else — before trying to connect the pieces from different puzzles.
+I love learning across fields, and I think the best ideas tend to come from putting wildly different things together in unique and innovative ways. I always try to develop a deep fundamental understanding of whatever I'm working on - whether that's LLM internals, abstract math proofs, or anything else - before trying to connect the pieces from different puzzles.
 
 ## This Website
 
-A personal site on who I am, some stuff I've done, things I've built, and what I'm thinking about — all made from scratch.
+A personal site on who I am, some stuff I've done, things I've built, and what I'm thinking about - all made from scratch.
 
 ---
 
 <div align="center">
 
-**Found a bug? [Let me know!](mailto:khushs@cmu.edu)** — I have made it all from scratch, after all.
+**Found a bug? [Let me know!](mailto:khushs@cmu.edu)**
 
 </div>
