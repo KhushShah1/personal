@@ -3,17 +3,36 @@ import PageHeader from "@/components/PageHeader";
 import InformationCard from "@/components/InformationCard";
 
 const posts = [
-  { organization: "Organization A", name: "Position A", description: "What I did A." },
-  { organization: "Organization B", name: "Position B", description: "What I did B." },
-  { organization: "Organization C", name: "Position C", description: "What I did C." },
-  { organization: "Organization D", name: "Position D", description: "What I did D." },
-  { organization: "Organization E", name: "Position E", description: "What I did E." },
-  { organization: "Organization F", name: "Position F", description: "What I did F." },
-  { organization: "Organization G", name: "Position G", description: "What I did G." },
-  { organization: "Organization H", name: "Position H", description: "What I did H." },
-  { organization: "Organization I", name: "Position I", description: "What I did I." },
-  { organization: "Organization J", name: "Position J", description: "What I did J." },
-  { organization: "Organization K", name: "Position K", description: "What I did K." },
+  {
+    organization: "Los Altos Hacks",
+    name: "Organizer & Sponsorship Lead",
+    description:
+      "Organized the world's largest high-school hackathon from 2021–2025. Raised $15K+ in sponsorships, gave speeches to 1000+ students, and mentored many new members.",
+  },
+  {
+    organization: "CENG",
+    name: "Senior Vice President",
+    description:
+      "Senior VP of Computer Engineers of the Next Generation (2022–2025). Managed 100+ volunteers teaching 24+ coding classes (Python, Java, JS) to underserved schools.",
+  },
+  {
+    organization: "Teen Tutoring",
+    name: "Tutor",
+    description:
+      "Tutored local students across math, coding, and science fundamentals, building curriculum and running 1-on-1 sessions to help them level up.",
+  },
+  {
+    organization: "T²",
+    name: "Work Experience",
+    description:
+      "Worked at T² gaining hands-on engineering and operations experience, contributing to day-to-day execution alongside a small team.",
+  },
+  {
+    organization: "Presidential Service",
+    name: "Presidential Volunteer Service Award",
+    description:
+      "Earned the Presidential Volunteer Service Award for logging 200+ hours of community service in a single year.",
+  },
 ];
 
 export default function Leadership() {

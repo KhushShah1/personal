@@ -1,34 +1,72 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Layout from "@/components/Layout";
 import ArrowIcon from "@/components/ArrowIcon";
-
-const items = Array.from({ length: 10 }, (_, i) => ({
-  organization: `Organization ${i + 1}`,
-  name: `Project Alpha ${i + 1}`,
-  description: `Project Alpha ${i + 1} Description`,
-  category: i % 2 === 0 ? "Projects" : "Leadership",
-}));
+import { resumeItems as items } from "@/data/resume";
 
 export default function Home() {
   const [index, setIndex] = useState(0);
   const [fading, setFading] = useState(false);
+  const fadingRef = useRef(false);
+
+  const goTo = (direction: number) => {
+    if (fadingRef.current) return;
+    fadingRef.current = true;
+    setFading(true);
+    setTimeout(() => {
+      setIndex((i) => (i + direction + items.length) % items.length);
+      setFading(false);
+      fadingRef.current = false;
+    }, 400);
+  };
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setFading(true);
-      setTimeout(() => {
-        setIndex((i) => (i + 1) % items.length);
-        setFading(false);
-      }, 400);
-    }, 10000);
-    return () => clearInterval(timer);
-  }, []);
+    const timer = setTimeout(() => goTo(1), 10000);
+    return () => clearTimeout(timer);
+  }, [index]);
 
   return (
     <Layout>
       <div className="grid grid-cols-1 sm:grid-cols-2">
         {/* Hero intro */}
-        <div className="px-1 pb-2 animate-card">
+        <div className="relative px-1 pb-2 animate-card">
+          <button
+            type="button"
+            onClick={() => goTo(-1)}
+            aria-label="Previous item"
+            className="absolute left-0 top-1/2 z-10 -translate-y-1/2 rounded text-warm-900/25 transition-colors hover:text-warm-900/60 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-200"
+          >
+            <svg
+              className="h-10 w-10 sm:h-14 sm:w-14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M15 18 9 12l6-6" />
+            </svg>
+          </button>
+          <button
+            type="button"
+            onClick={() => goTo(1)}
+            aria-label="Next item"
+            className="absolute right-0 top-1/2 z-10 -translate-y-1/2 rounded text-warm-900/25 transition-colors hover:text-warm-900/60 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-200"
+          >
+            <svg
+              className="h-10 w-10 sm:h-14 sm:w-14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="m9 18 6-6-6-6" />
+            </svg>
+          </button>
           <div className="h-full w-full px-4 pt-6 sm:px-8 sm:pt-6">
             <h1 className="font-serif-variation font-serif text-2xl font-light !leading-tight text-warm-600 sm:text-3xl lg:text-4xl">
               Hey there, I&apos;m{" "}
