@@ -69,14 +69,14 @@ export default function Home() {
           </button>
           <div className="h-full w-full px-4 pt-6 sm:px-8 sm:pt-6">
             <h1 className="font-serif-variation font-serif text-2xl font-light !leading-tight text-warm-600 sm:text-3xl lg:text-4xl">
-              Hey there, I&apos;m{" "}
-              <span className="text-warm-900">Khush</span> 👋 Welcome to
+              Hello! I&apos;m{" "}
+              <span className="text-warm-900">Khush</span> , and this is
               my{" "}
               <span className="text-warm-900">personal website</span>{" "}
-              🌐 I&apos;m a{" "}
+              I&apos;m a{" "}
               <span className="text-warm-900">CS and Math</span> student
-              from the bay 🌉 studying at{" "}
-              <span className="text-warm-900">CMU</span>, and I&apos;m
+              from the bay studying at{" "}
+              <span className="text-warm-900">Carnegie Mellon</span>, and I&apos;m
               super into{" "}
               <span className="text-warm-900">ML research</span> and
               building cool things.
