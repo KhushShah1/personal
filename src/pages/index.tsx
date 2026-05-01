@@ -28,54 +28,18 @@ export default function Home() {
     <Layout>
       <div className="grid grid-cols-1 sm:grid-cols-2">
         {/* Hero intro */}
-        <div className="relative px-1 pb-2 animate-card">
-          <button
-            type="button"
-            onClick={() => goTo(-1)}
-            aria-label="Previous item"
-            className="absolute left-0 top-1/2 z-10 -translate-y-1/2 rounded text-warm-900/25 transition-colors hover:text-warm-900/60 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-200"
-          >
-            <svg
-              className="h-10 w-10 sm:h-14 sm:w-14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
-            >
-              <path d="M15 18 9 12l6-6" />
-            </svg>
-          </button>
-          <button
-            type="button"
-            onClick={() => goTo(1)}
-            aria-label="Next item"
-            className="absolute right-0 top-1/2 z-10 -translate-y-1/2 rounded text-warm-900/25 transition-colors hover:text-warm-900/60 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-200"
-          >
-            <svg
-              className="h-10 w-10 sm:h-14 sm:w-14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
-            >
-              <path d="m9 18 6-6-6-6" />
-            </svg>
-          </button>
+        <div className="px-1 pb-2 animate-card">
           <div className="h-full w-full px-4 pt-6 sm:px-8 sm:pt-6">
             <h1 className="font-serif-variation font-serif text-2xl font-light !leading-tight text-warm-600 sm:text-3xl lg:text-4xl">
-              Hello! I&apos;m{" "}
-              <span className="text-warm-900">Khush</span> , and this is
+              ✰ 𝙝𝙚𝙡𝙡𝙤<span className="font-heavy">!</span> ✰ I&apos;m{" "}
+              <span className="text-warm-900">Khush</span>, and this is
               my{" "}
-              <span className="text-warm-900">personal website</span>{" "}
+              <span className="text-warm-900">personal website 👾</span>
+              <br />
+              <br />
               I&apos;m a{" "}
               <span className="text-warm-900">CS and Math</span> student
-              from the bay studying at{" "}
+              from the bay 🌉 studying at{" "}
               <span className="text-warm-900">Carnegie Mellon</span>, and I&apos;m
               super into{" "}
               <span className="text-warm-900">ML research</span> and
@@ -84,7 +48,7 @@ export default function Home() {
               <br />
               Alongside some other stuff, I love fiddling around with
               technical{" "}
-              <span className="text-warm-900">AI Safety research</span>,
+              <span className="text-warm-900">AI Safety research</span> 📝
               and I&apos;m currently working to publish some stuff at{" "}
               <a
                 href="https://cmuaisafety.com"
@@ -109,7 +73,7 @@ export default function Home() {
               >
                 ScottyLabs
               </a>
-              , and try to get up a bunch more{" "}
+              , and try to get up to a bunch more{" "}
               <a
                 className="rounded text-warm-900 underline decoration-warm-900 decoration-1 underline-offset-4 hover:decoration-lime-400 hover:decoration-2 focus-visible:ring-4 focus-visible:ring-blue-200"
                 href="/projects"
@@ -122,7 +86,45 @@ export default function Home() {
         </div>
 
         <div className="px-4 pt-2 pb-10 sm:pb-[10px]">
-          <div className="aspect-square sm:aspect-auto sm:h-[calc(100vh-130px)]">
+          <div className="relative aspect-square sm:aspect-auto sm:h-[calc(100vh-130px)]">
+            <button
+              type="button"
+              onClick={() => goTo(-1)}
+              aria-label="Previous item"
+              className="absolute left-0 top-1/2 z-10 -translate-y-1/2 rounded text-warm-900/25 transition-colors hover:text-warm-900/60 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-200"
+            >
+              <svg
+                className="h-10 w-10 sm:h-14 sm:w-14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M15 18 9 12l6-6" />
+              </svg>
+            </button>
+            <button
+              type="button"
+              onClick={() => goTo(1)}
+              aria-label="Next item"
+              className="absolute right-0 top-1/2 z-10 -translate-y-1/2 rounded text-warm-900/25 transition-colors hover:text-warm-900/60 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-200"
+            >
+              <svg
+                className="h-10 w-10 sm:h-14 sm:w-14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="m9 18 6-6-6-6" />
+              </svg>
+            </button>
             <div className="group h-full w-full overflow-hidden rounded-lg bg-warm-200 transition-colors hover:bg-warm-300 animate-card" style={{ animationDelay: "50ms" }}>
               <div className="relative isolate flex h-full w-full flex-col">
                 <div className="flex items-center justify-between rounded-t-lg bg-warm-300 pl-4 pr-2 pt-2 text-base tracking-tight text-warm-700">
