@@ -83,3 +83,12 @@ body {
 .animate-progress {
   animation: progressGrow 10s linear forwards;
 }
+
+@keyframes drawerIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

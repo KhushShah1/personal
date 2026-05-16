@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Khush Shah</title>
+  <desc id="desc">Social card for Khush Shah's personal website.</desc>
+  <rect width="1200" height="630" fill="#faf0e6"/>
+  <rect x="56" y="56" width="1088" height="518" rx="28" fill="#f5ebe0" stroke="#ddd0c0" stroke-width="2"/>
+  <circle cx="980" cy="132" r="88" fill="none" stroke="#bae6fd" stroke-width="2"/>
+  <circle cx="980" cy="132" r="138" fill="none" stroke="#fed7aa" stroke-width="2"/>
+  <circle cx="1024" cy="202" r="18" fill="#c4b5a4"/>
+  <path d="M104 470 C260 350 420 394 548 286 C664 188 808 224 1034 112" fill="none" stroke="#c4b5a4" stroke-width="3" opacity="0.45"/>
+  <path d="M782 452 852 332 928 384 1028 244" fill="none" stroke="#d8b4fe" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.65"/>
+  <rect x="104" y="108" width="130" height="42" rx="21" fill="#ede0d4"/>
+  <text x="126" y="136" fill="#6b5c4c" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="22">khush.site</text>
+  <text x="104" y="292" fill="#2c1810" font-family="Fraunces, Georgia, serif" font-size="104" font-weight="300">Khush Shah</text>
+  <text x="108" y="358" fill="#6b5c4c" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="30">CS + Math at Carnegie Mellon</text>
+  <text x="108" y="406" fill="#6b5c4c" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="30">ML research, AI safety, software, and notes</text>
+  <rect x="104" y="486" width="148" height="10" rx="5" fill="#0ea5e9"/>
+  <rect x="268" y="486" width="148" height="10" rx="5" fill="#f97316"/>
+  <rect x="432" y="486" width="148" height="10" rx="5" fill="#a855f7"/>
+  <rect x="596" y="486" width="148" height="10" rx="5" fill="#6b5c4c"/>
+</svg>

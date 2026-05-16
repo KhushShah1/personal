@@ -13,12 +13,14 @@ const navLinks = [
   { href: "/blogs", label: "Blogs" },
 ];
 
-const socialLinks = [
+type SocialLink = { href: string; label: string; download?: boolean };
+
+const socialLinks: SocialLink[] = [
   { href: "https://github.com/KhushShah1", label: "Github" },
   { href: "mailto:khushs@cmu.edu", label: "Email" },
   { href: "https://linkedin.com/in/khush--shah/", label: "LinkedIn" },
   { href: "https://instagram.com/khush.shah_/", label: "Instagram" },
-  { href: "/resume", label: "Resume" },
+  { href: "/khush-shah-resume.pdf", label: "Resume", download: true },
   { href: KITTEN_URL, label: "Surprise!" },
 ];
 
@@ -72,6 +74,20 @@ export default function Nav() {
         style={socialStyle}
       >
         {socialLinks.map((link) => {
+          if (link.download) {
+            return (
+              <a
+                key={link.label}
+                href={link.href}
+                download
+                target="_blank"
+                rel="noopener noreferrer"
+                className={SOCIAL_LINK_CLASS}
+              >
+                {link.label}
+              </a>
+            );
+          }
           if (link.href.startsWith("/")) {
             return (
               <Link key={link.label} href={link.href} className={SOCIAL_LINK_CLASS}>
