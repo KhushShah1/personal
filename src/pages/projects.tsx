@@ -1,11 +1,12 @@
 import Head from "next/head";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import DetailDrawer from "@/components/DetailDrawer";
 import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
+import ParagraphList from "@/components/ParagraphList";
 import { Project, projects } from "@/data/projects";
 
 const sizeClass: Record<Project["size"], string> = {
-  hero: "md:col-span-2 md:row-span-2 min-h-[24rem]",
   wide: "md:col-span-2 min-h-[18rem]",
   tall: "md:row-span-2 min-h-[24rem]",
   small: "min-h-[18rem]",
@@ -74,17 +75,6 @@ function ProjectMotif({ motif }: { motif: Project["motif"] }) {
 export default function Projects() {
   const [activeProject, setActiveProject] = useState<Project | null>(null);
 
-  useEffect(() => {
-    if (!activeProject) return;
-
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setActiveProject(null);
-    };
-
-    window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
-  }, [activeProject]);
-
   return (
     <Layout>
       <Head>
@@ -129,22 +119,15 @@ export default function Projects() {
           </button>
         ))}
       </section>
-      {activeProject && (
-        <div className="fixed inset-0 z-40">
-          <button
-            type="button"
-            aria-label="Close project details"
-            onClick={() => setActiveProject(null)}
-            className="absolute inset-0 bg-warm-900/30 backdrop-blur-sm"
-          />
-          <aside className="absolute top-0 right-0 flex h-full w-full max-w-xl animate-[drawerIn_260ms_ease_forwards] flex-col overflow-y-auto border-l border-sky-950/10 bg-warm-50 p-8 shadow-2xl sm:p-10">
-            <button
-              type="button"
-              onClick={() => setActiveProject(null)}
-              className="mb-10 w-fit rounded-full border border-sky-200 px-4 py-2 text-sm tracking-tight text-sky-800 transition hover:bg-sky-100 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sky-200"
-            >
-              Close
-            </button>
+      <DetailDrawer
+        open={activeProject !== null}
+        ariaLabel={activeProject?.name ?? "Project details"}
+        accent="sky"
+        closeLabel="Close project details"
+        onClose={() => setActiveProject(null)}
+      >
+        {activeProject && (
+          <>
             <p className="text-sm font-medium uppercase tracking-[0.18em] text-sky-700">
               {activeProject.organization}
             </p>
@@ -159,11 +142,10 @@ export default function Projects() {
                 {activeProject.dates}
               </span>
             </div>
-            <div className="mt-8 space-y-5 text-lg leading-relaxed tracking-tight text-warm-700">
-              {activeProject.longDescription.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
-            </div>
+            <ParagraphList
+              paragraphs={activeProject.longDescription}
+              className="mt-8 space-y-5 text-lg leading-relaxed tracking-tight text-warm-700"
+            />
             <div className="mt-10 flex flex-wrap gap-3">
               <a
                 href={activeProject.href}
@@ -174,9 +156,9 @@ export default function Projects() {
                 Visit project
               </a>
             </div>
-          </aside>
-        </div>
-      )}
+          </>
+        )}
+      </DetailDrawer>
     </Layout>
   );
 }

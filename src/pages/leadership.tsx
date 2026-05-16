@@ -1,22 +1,13 @@
 import Head from "next/head";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import DetailDrawer from "@/components/DetailDrawer";
 import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
+import ParagraphList from "@/components/ParagraphList";
 import { LeadershipPost, leadership, leadershipStats } from "@/data/leadership";
 
 export default function Leadership() {
   const [activePost, setActivePost] = useState<LeadershipPost | null>(null);
-
-  useEffect(() => {
-    if (!activePost) return;
-
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setActivePost(null);
-    };
-
-    window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
-  }, [activePost]);
 
   return (
     <Layout>
@@ -69,33 +60,25 @@ export default function Leadership() {
           );
         })}
       </section>
-      {activePost && (
-        <div className="fixed inset-0 z-40">
-          <button
-            type="button"
-            aria-label="Close leadership details"
-            onClick={() => setActivePost(null)}
-            className="absolute inset-0 bg-warm-900/30 backdrop-blur-sm"
-          />
-          <aside className="absolute top-0 right-0 flex h-full w-full max-w-xl animate-[drawerIn_260ms_ease_forwards] flex-col overflow-y-auto border-l border-orange-950/10 bg-warm-50 p-8 shadow-2xl sm:p-10">
-            <button
-              type="button"
-              onClick={() => setActivePost(null)}
-              className="mb-10 w-fit rounded-full border border-orange-200 px-4 py-2 text-sm tracking-tight text-orange-800 transition hover:bg-orange-100 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-orange-200"
-            >
-              Close
-            </button>
+      <DetailDrawer
+        open={activePost !== null}
+        ariaLabel={activePost?.name ?? "Leadership details"}
+        accent="orange"
+        closeLabel="Close leadership details"
+        onClose={() => setActivePost(null)}
+      >
+        {activePost && (
+          <>
             <p className="text-sm font-medium uppercase tracking-[0.18em] text-orange-700">
               {activePost.organization}
             </p>
             <h2 className="mt-3 font-serif-variation font-serif text-4xl font-light leading-tight text-warm-900 sm:text-5xl">
               {activePost.name}
             </h2>
-            <div className="mt-8 space-y-5 text-lg leading-relaxed tracking-tight text-warm-700">
-              {activePost.longDescription.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
-            </div>
+            <ParagraphList
+              paragraphs={activePost.longDescription}
+              className="mt-8 space-y-5 text-lg leading-relaxed tracking-tight text-warm-700"
+            />
             {activePost.href && (
               <div className="mt-10 flex flex-wrap gap-3">
                 <a
@@ -108,9 +91,9 @@ export default function Leadership() {
                 </a>
               </div>
             )}
-          </aside>
-        </div>
-      )}
+          </>
+        )}
+      </DetailDrawer>
     </Layout>
   );
 }

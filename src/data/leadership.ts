@@ -4,7 +4,6 @@ export type LeadershipPost = {
   description: string;
   longDescription: string[];
   href?: string;
-  monogram: string;
 };
 
 export const leadershipStats = [
@@ -25,7 +24,6 @@ export const leadership: LeadershipPost[] = [
       "Organized the world's largest high-school hackathon from 2021-2025. Raised $15K+ in sponsorships, gave speeches to 1000+ students, and mentored many new members.",
     ],
     href: "https://losaltoshacks.com",
-    monogram: "LAH",
   },
   {
     organization: "CENG",
@@ -36,7 +34,6 @@ export const leadership: LeadershipPost[] = [
       "Managed 100+ volunteers teaching 24+ coding classes in Python, Java, and JavaScript to underserved schools.",
     ],
     href: "https://cengclass.org",
-    monogram: "CENG",
   },
   {
     organization: "Teen Tutoring",
@@ -47,7 +44,6 @@ export const leadership: LeadershipPost[] = [
       "Tutored local students across math, coding, and science fundamentals, building curriculum and running 1-on-1 sessions to help them level up.",
     ],
     href: "https://teentutorslahs.wixsite.com/lahs",
-    monogram: "TT",
   },
   {
     organization: "T² Robotics",
@@ -57,7 +53,6 @@ export const leadership: LeadershipPost[] = [
     longDescription: [
       "Gained hands-on engineering and operations experience, contributing to day-to-day execution alongside a small team.",
     ],
-    monogram: "T²",
   },
   {
     organization: "Presidential Volunteer Service Award",
@@ -67,6 +62,5 @@ export const leadership: LeadershipPost[] = [
     longDescription: [
       "Earned the Presidential Volunteer Service Award for logging 200+ hours of community service in a single year.",
     ],
-    monogram: "PVSA",
   },
 ];

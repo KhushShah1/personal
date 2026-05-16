@@ -11,13 +11,6 @@ export type ResumeSection = {
   entries: ResumeEntry[];
 };
 
-export type ResumeCarouselItem = {
-  category: string;
-  organization: string;
-  name: string;
-  description: string;
-};
-
 export const resumeSections: ResumeSection[] = [
   {
     id: "education",
@@ -126,12 +119,3 @@ export const resumeSections: ResumeSection[] = [
     ],
   },
 ];
-
-export const resumeItems: ResumeCarouselItem[] = resumeSections.flatMap((section) =>
-  section.entries.map((entry) => ({
-    category: section.title,
-    organization: entry.organization,
-    name: entry.title,
-    description: [entry.dates, ...entry.bullets].filter(Boolean).join(" "),
-  })),
-);

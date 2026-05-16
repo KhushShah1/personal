@@ -1,4 +1,5 @@
 import ArrowIcon from "./ArrowIcon";
+import ParagraphList from "./ParagraphList";
 
 interface CardProps {
   category: string;
@@ -54,15 +55,10 @@ export default function Card({
             {name}
           </h3>
           {description && (
-            <div
+            <ParagraphList
+              paragraphs={description}
               className={`mt-3 space-y-3 text-sm leading-relaxed tracking-tight text-warm-600 ${clamp ? "line-clamp-6" : ""}`}
-            >
-              {Array.isArray(description) ? (
-                description.map((paragraph) => <p key={paragraph}>{paragraph}</p>)
-              ) : (
-                <p>{description}</p>
-              )}
-            </div>
+            />
           )}
         </div>
       </div>

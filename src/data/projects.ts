@@ -1,4 +1,4 @@
-export type ProjectSize = "wide" | "tall" | "hero" | "small";
+export type ProjectSize = "wide" | "tall" | "small";
 
 export type ProjectMotif = "orbit" | "mesh" | "terminal" | "blocks" | "chart";
 
