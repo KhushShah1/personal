@@ -80,9 +80,9 @@ export default function Resume() {
         </aside>
         <article className="rounded-lg border border-warm-300 bg-[#fffaf4] p-5 shadow-skeuo sm:p-8 lg:p-10">
           <header className="border-b border-warm-300 pb-6 text-center">
-            <h1 className="font-serif-variation font-serif text-4xl font-light tracking-tight text-warm-900">
+            <h2 className="font-serif-variation font-serif text-4xl font-light tracking-tight text-warm-900">
               Khush Shah
-            </h1>
+            </h2>
             <p className="mt-2 text-sm tracking-tight text-warm-600">
               Carnegie Mellon University | B.S. in Computer Science & Mathematics | Expected May 2028
             </p>
