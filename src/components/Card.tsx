@@ -27,11 +27,11 @@ export default function Card({
 }: CardProps) {
   const fadeClass = `transition-opacity duration-400 ${fading ? "opacity-0" : "opacity-100"}`;
   const headerSizeClass = headerSize === "base" ? "text-base" : "text-sm";
-  const containerClass = `group h-full w-full overflow-hidden rounded-lg bg-warm-200 transition-colors focus-within:bg-warm-300 hover:bg-warm-300 animate-card${href ? " block cursor-alias focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-200" : ""}`;
+  const containerClass = `group flex h-full min-h-[inherit] w-full flex-col overflow-hidden rounded-lg bg-warm-200 transition-colors focus-within:bg-warm-300 hover:bg-warm-300 animate-card${href ? " cursor-alias focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-200" : ""}`;
   const containerStyle = { animationDelay: `${delay}ms` };
 
   const inner = (
-    <div className="relative isolate flex h-full w-full flex-col">
+    <div className="relative isolate flex h-full min-h-[inherit] w-full flex-col">
       <div
         className={`flex items-center justify-between rounded-t-lg bg-warm-300 pl-4 pr-2 pt-2 ${headerSizeClass} tracking-tight text-warm-700`}
       >
@@ -49,7 +49,7 @@ export default function Card({
         )}
       </div>
       <div className="grow overflow-hidden">
-        <div className={`px-5 pt-4 ${fadeClass}`}>
+        <div className={`px-5 pt-4 pb-8 ${fadeClass}`}>
           <h3 className="font-serif-variation font-serif text-2xl font-light text-warm-900">
             {name}
           </h3>

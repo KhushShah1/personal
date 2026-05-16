@@ -130,7 +130,7 @@ export default function Home() {
         </div>
 
         <div className="px-4 pt-2 pb-10 sm:pb-[10px]">
-          <div className="relative aspect-square sm:aspect-auto sm:h-[calc(100vh-130px)]">
+          <div className="relative flex min-h-[calc(100vw-4rem)] sm:block sm:h-[calc(100vh-130px)] sm:min-h-0">
             <CarouselButton direction="prev" onClick={() => goTo(-1)} />
             <CarouselButton direction="next" onClick={() => goTo(1)} />
             <Card
