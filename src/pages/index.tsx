@@ -3,10 +3,66 @@ import Layout from "@/components/Layout";
 import Card from "@/components/Card";
 import CarouselButton from "@/components/CarouselButton";
 import InlineLink from "@/components/InlineLink";
-import { resumeItems as items } from "@/data/resume";
+import { leadership } from "@/data/leadership";
+import { projects } from "@/data/projects";
+import { resumeSections } from "@/data/resume";
 
-const CYCLE_MS = 10_000;
+const CYCLE_MS = 5_000;
 const FADE_MS = 400;
+
+const educationSection = resumeSections.find((section) => section.id === "education");
+const technicalSkillsSection = resumeSections.find(
+  (section) => section.id === "technical-skills",
+);
+const cmuEducation = educationSection?.entries.find(
+  (entry) => entry.organization === "Carnegie Mellon University",
+);
+const otherEducation = educationSection?.entries.filter(
+  (entry) => entry.organization !== "Carnegie Mellon University",
+);
+
+const items = [
+  {
+    category: "Resume",
+    organization: "Education",
+    name: "Carnegie Mellon University",
+    description: [
+      [cmuEducation?.title, cmuEducation?.dates]
+        .filter(Boolean)
+        .join(". "),
+      ...(cmuEducation?.bullets ?? []),
+      ...(otherEducation?.map((entry) =>
+        [entry.organization, entry.title, entry.dates, ...entry.bullets]
+          .filter(Boolean)
+          .join(". "),
+      ) ?? []),
+    ],
+    href: "/resume",
+  },
+  {
+    category: "Resume",
+    organization: "Technical Skills",
+    name: "Languages, tools, and ML",
+    description:
+      technicalSkillsSection?.entries
+        .map((entry) => [entry.organization, ...entry.bullets].join(": ")) ?? [],
+    href: "/resume",
+  },
+  ...projects.map((project) => ({
+    category: "Project",
+    organization: project.organization,
+    name: project.name,
+    description: project.longDescription,
+    href: "/projects",
+  })),
+  ...leadership.map((post) => ({
+    category: "Leadership",
+    organization: post.organization,
+    name: post.name,
+    description: post.longDescription,
+    href: "/leadership",
+  })),
+];
 
 export default function Home() {
   const [index, setIndex] = useState(0);
@@ -82,7 +138,7 @@ export default function Home() {
               organization={current.organization}
               name={current.name}
               description={current.description}
-              href="/projects"
+              href={current.href}
               fading={fading}
               headerSize="base"
               delay={50}

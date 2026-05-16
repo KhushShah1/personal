@@ -22,9 +22,11 @@ export const projects: Project[] = [
     dates: "September 2025 - present",
     href: "https://cmuaisafety.com",
     subCaption:
-      "Core member and researcher pushing AI safety research forward alongside some of CMU's strongest builders and thinkers.",
+      "Core member and researcher at CMU's largest AI research club, helping raise awareness about AI safety and improve AI literacy.",
     longDescription: [
-      "I participate in a technical AI safety research reading group studying transformers, mechanistic interpretability, and RLHF. I am also co-leading a 3-person research project on AI safety alignment robustness and producing empirical research.",
+      "I participated in a technical AI safety research reading group studying transformers, mechanistic interpretability, and all the basics needed to understand the frontier of AI Safety research.",
+      "I co-lead a 3-person research project on AI safety alignment robustness, producing empirical research.",
+      "I also help run club activities, and through CASI I have attended AI safety and EA workshops.",
     ],
     size: "wide",
     motif: "orbit",
@@ -64,7 +66,7 @@ export const projects: Project[] = [
     dates: "February 2026",
     href: "https://arena.education",
     subCaption:
-      "Studied transformer and LLM fundamentals in depth, building a practical AI safety base through hands-on projects.",
+      "Studied transformer and LLM fundamentals in depth, gaining an even deeper understanding of transformer models through hands-on work.",
     longDescription: [
       "I completed ARENA, a technical AI safety curriculum covering reinforcement learning, evaluations, interpretability, and alignment.",
       "I implemented transformers from scratch and built a working knowledge of LLM internals, attention, RLHF, and alignment techniques.",

@@ -95,7 +95,7 @@ export default function Projects() {
         kicker="a record of building things"
         accentClass="text-sky-700"
         accentLineClass="bg-sky-500"
-        description="Research, software, and technical experiments that turned into real systems, papers, and working products."
+        description="Research, software, hackathon projects, and technical curriculum that turned into real products, papers, and side projects that have helped me gain tons of valuable experience."
       />
       <section className="grid auto-rows-[minmax(18rem,auto)] grid-cols-1 gap-3 pb-16 md:grid-cols-3">
         {projects.map((project, i) => (
@@ -107,7 +107,7 @@ export default function Projects() {
             className={`group relative isolate flex overflow-hidden rounded-lg border border-sky-950/10 bg-warm-100 p-6 text-left shadow-skeuo transition duration-300 hover:-translate-y-1 hover:border-sky-400 hover:bg-sky-50 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sky-200 animate-card ${sizeClass[project.size]}`}
           >
             <ProjectMotif motif={project.motif} />
-            <div className="relative z-10 flex h-full min-h-0 w-full flex-col justify-between">
+            <div className="relative z-10 flex h-full min-h-0 w-full flex-col justify-between gap-4">
               <div className="flex items-start justify-between gap-4 text-sm tracking-tight text-warm-600">
                 <span className="rounded-full bg-sky-100 px-3 py-1 text-sky-800">
                   {project.organization}

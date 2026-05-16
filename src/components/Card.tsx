@@ -4,7 +4,7 @@ interface CardProps {
   category: string;
   organization: string;
   name: string;
-  description?: string;
+  description?: string | string[];
   href?: string;
   delay?: number;
   fading?: boolean;
@@ -54,11 +54,15 @@ export default function Card({
             {name}
           </h3>
           {description && (
-            <p
-              className={`mt-3 text-sm leading-relaxed tracking-tight text-warm-600 ${clamp ? "line-clamp-6" : ""}`}
+            <div
+              className={`mt-3 space-y-3 text-sm leading-relaxed tracking-tight text-warm-600 ${clamp ? "line-clamp-6" : ""}`}
             >
-              {description}
-            </p>
+              {Array.isArray(description) ? (
+                description.map((paragraph) => <p key={paragraph}>{paragraph}</p>)
+              ) : (
+                <p>{description}</p>
+              )}
+            </div>
           )}
         </div>
       </div>

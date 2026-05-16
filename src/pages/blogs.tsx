@@ -19,18 +19,18 @@ const tags = [
 
 const plannedPosts = [
   {
-    title: "What Freshman Year Taught Me",
+    title: "Freshman Year...",
     type: "Essay",
     tags: ["CMU", "Personal", "Learning"],
     description:
-      "A longer reflection on finishing my first year at CMU, what changed, and what I want to carry forward.",
+      "A reflection on everything that happened during my first year at CMU and how it changed who I am. Everything I faced, learnt, and grew from and what I want to carry going forward.",
   },
   {
-    title: "Research Mode, Startup Mode",
-    type: "Essay",
+    title: "Research or Startup",
+    type: "Note",
     tags: ["AI Safety", "Research", "Startups"],
     description:
-      "A comparison of the pace, incentives, and taste-building that show up in AI research versus startup work.",
+      "My thoughts comparing pursuing further AI research work versus focusing on a startup, and the impacts of doing either on both the world and my own future.",
   },
 ];
 
@@ -60,7 +60,7 @@ export default function Blogs() {
               Nothing published yet.
             </h2>
             <p className="mt-6 max-w-xl text-lg leading-relaxed tracking-tight text-warm-600">
-              This space is set up for MDX posts, with notes under 500 words and essays at 500 words or more. The first pieces are planned below.
+              I haven&apos;t finalized what I&apos;m putting out yet, but I do have a couple things I&apos;m coming up with! ↓↓↓
             </p>
           </div>
         </article>
@@ -94,9 +94,6 @@ export default function Blogs() {
             <h2 className="font-serif-variation font-serif text-4xl font-light text-warm-900">
               Coming soon
             </h2>
-            <p className="text-sm tracking-tight text-warm-500">
-              Essays are 500+ words.
-            </p>
           </div>
           <div className="grid gap-3 md:grid-cols-2">
             {plannedPosts.map((post) => (

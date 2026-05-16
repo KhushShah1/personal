@@ -49,7 +49,7 @@ export default function Resume() {
         kicker="the whole picture"
         accentClass="text-purple-700"
         accentLineClass="bg-purple-500"
-        description="A web-native version of my resume, built to read like the PDF while making the structure easier to scan."
+        description="A web-native version of my resume."
       />
       <div className="pb-16 lg:grid lg:grid-cols-[13rem_1fr] lg:gap-8">
         <aside className="sticky top-20 z-10 mb-4 rounded-lg border border-purple-950/10 bg-warm-50/85 p-3 shadow-skeuo backdrop-blur lg:self-start">
