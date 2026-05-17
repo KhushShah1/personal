@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import { Analytics } from "@vercel/analytics/next";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { Inter, Fraunces } from "next/font/google";
@@ -41,6 +42,7 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <div className={`${inter.variable} ${fraunces.variable} font-sans`}>
         <Component {...pageProps} />
+        <Analytics />
       </div>
     </>
   );
