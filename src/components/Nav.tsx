@@ -2,8 +2,20 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-const KITTEN_URL =
-  "https://www.rd.com/wp-content/uploads/2024/06/50-Photos-of-Cute-Kittens-That-Will-Make-You-Melt_GettyImages-187144066_SSedit_FT.jpg";
+const surpriseUrls = [
+  "https://wallpapers.com/images/high/kitten-pictures-akpm5ao9786ijsvw.webp",
+  "https://wallpapers.com/images/high/cute-kitten-pictures-t701qv2pzyd8zqa1.webp",
+  "https://wallpapers.com/images/high/cute-kitten-pictures-86idd8w0eu4vx40r.webp",
+  "https://wallpapers.com/images/high/cute-kitten-pictures-mbvn2lw36yqa4zbl.webp",
+  "https://wallpapers.com/images/high/cute-kittens-pictures-2560-x-1709-7tumhiqthchg7pkl.webp",
+  "https://wallpapers.com/images/high/cute-kittens-pictures-3000-x-3000-e3qp7jxc96nayin9.webp",
+  "https://wallpapers.com/images/high/cute-kittens-pictures-1080-x-1080-qosbno0ni62vb5p4.webp",
+  "https://getwallpapers.com/wallpaper/full/6/d/a/1060072-download-cute-kitten-pictures-wallpaper-2560x1600-hd.jpg",
+  "https://getwallpapers.com/wallpaper/full/d/7/c/1060082-cute-kitten-pictures-wallpaper-1920x1080-high-resolution.jpg",
+  "https://getwallpapers.com/wallpaper/full/6/8/7/1060157-cute-kitten-pictures-wallpaper-1920x1080-samsung.jpg",
+  "https://getwallpapers.com/wallpaper/full/7/3/7/1060182-cute-kitten-pictures-wallpaper-3840x2160-for-4k.jpg",
+  "https://getwallpapers.com/wallpaper/full/1/3/f/1060141-cute-kitten-pictures-wallpaper-1920x1200-mobile.jpg",
+];
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -13,7 +25,7 @@ const navLinks = [
   { href: "/blogs", label: "Blogs" },
 ];
 
-type SocialLink = { href: string; label: string; download?: boolean };
+type SocialLink = { href: string; label: string; download?: boolean; randomHrefs?: string[] };
 
 const socialLinks: SocialLink[] = [
   { href: "https://github.com/KhushShah1", label: "Github" },
@@ -21,13 +33,19 @@ const socialLinks: SocialLink[] = [
   { href: "https://linkedin.com/in/khush--shah/", label: "LinkedIn" },
   { href: "https://instagram.com/khush.shah_/", label: "Instagram" },
   { href: "/khush-shah-resume.pdf", label: "Resume", download: true },
-  { href: KITTEN_URL, label: "Surprise!" },
+  { href: surpriseUrls[0], label: "Surprise!", randomHrefs: surpriseUrls },
 ];
 
 const SOCIAL_LINK_CLASS =
   "rounded py-1 px-2 text-base tracking-tight text-warm-500 decoration-wavy underline-offset-4 focus-visible:ring-4 focus-visible:ring-blue-200 focus:text-warm-900 cursor-alias transition-colors hover:text-warm-900 hover:underline";
 
 const NAV_ANIMATION_MS = 1000;
+
+function openRandomHref(event: React.MouseEvent<HTMLAnchorElement>, hrefs: string[]) {
+  event.preventDefault();
+  const href = hrefs[Math.floor(Math.random() * hrefs.length)];
+  window.open(href, "_blank", "noopener,noreferrer");
+}
 
 export default function Nav() {
   const router = useRouter();
@@ -74,6 +92,20 @@ export default function Nav() {
         style={socialStyle}
       >
         {socialLinks.map((link) => {
+          if (link.randomHrefs) {
+            return (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(event) => openRandomHref(event, link.randomHrefs ?? [])}
+                className={SOCIAL_LINK_CLASS}
+              >
+                {link.label}
+              </a>
+            );
+          }
           if (link.download) {
             return (
               <a
