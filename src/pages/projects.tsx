@@ -4,7 +4,8 @@ import DetailDrawer from "@/components/DetailDrawer";
 import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
 import ParagraphList from "@/components/ParagraphList";
-import { Project, projects } from "@/data/projects";
+import { projects } from "@/data/projects";
+import type { Project } from "@/data/projects";
 
 const sizeClass: Record<Project["size"], string> = {
   wide: "md:col-span-2 min-h-[18rem]",

@@ -4,7 +4,8 @@ import DetailDrawer from "@/components/DetailDrawer";
 import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
 import ParagraphList from "@/components/ParagraphList";
-import { LeadershipPost, leadership, leadershipStats } from "@/data/leadership";
+import { leadership, leadershipStats } from "@/data/leadership";
+import type { LeadershipPost } from "@/data/leadership";
 
 export default function Leadership() {
   const [activePost, setActivePost] = useState<LeadershipPost | null>(null);
@@ -19,9 +20,9 @@ export default function Leadership() {
         kicker="a record of leading them"
         accentClass="text-orange-700"
         accentLineClass="bg-orange-500"
-        description="Organizations, teams, classes, events, and service work where I was responsible for moving people toward something real."
+        description="A few of the teams, organizations, and classrooms where I've led, taught, and built things alongside others to create massive impact."
       />
-      <section className="mb-4 grid grid-cols-1 overflow-hidden rounded-lg border border-orange-950/10 bg-orange-50 shadow-skeuo sm:grid-cols-2 lg:grid-cols-5">
+      <section className="mb-4 grid grid-cols-1 overflow-hidden rounded-lg border border-orange-950/10 bg-orange-50 shadow-skeuo sm:grid-cols-2 lg:grid-cols-4">
         {leadershipStats.map((stat) => {
           return (
             <div key={stat.label} className="border-b border-orange-950/10 p-5 last:border-b-0 sm:border-r sm:last:border-r-0 lg:border-b-0">
@@ -49,6 +50,9 @@ export default function Leadership() {
                 <p className="text-sm tracking-tight text-orange-700">
                   {post.organization}
                 </p>
+                <p className="mt-1 text-xs font-medium uppercase tracking-[0.14em] text-warm-500">
+                  {post.date}
+                </p>
                 <h2 className="mt-2 font-serif-variation font-serif text-3xl font-light leading-tight text-warm-900">
                   {post.name}
                 </h2>
@@ -71,6 +75,9 @@ export default function Leadership() {
           <>
             <p className="text-sm font-medium uppercase tracking-[0.18em] text-orange-700">
               {activePost.organization}
+            </p>
+            <p className="mt-2 text-xs font-medium uppercase tracking-[0.16em] text-warm-500">
+              {activePost.date}
             </p>
             <h2 className="mt-3 font-serif-variation font-serif text-4xl font-light leading-tight text-warm-900 sm:text-5xl">
               {activePost.name}

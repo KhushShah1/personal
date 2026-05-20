@@ -57,7 +57,7 @@ export default function Card({
           {description && (
             <ParagraphList
               paragraphs={description}
-              className={`mt-3 space-y-3 text-sm leading-relaxed tracking-tight text-warm-600 ${clamp ? "line-clamp-6" : ""}`}
+              className={`mt-3 space-y-3 text-[16Cpx] leading-relaxed tracking-tight text-warm-600 ${clamp ? "line-clamp-6" : ""}`}
             />
           )}
         </div>

@@ -1,14 +1,23 @@
-# Blog Content
+# Blog Posts
 
-Drop future MDX posts in this directory. Planned frontmatter:
+Add one `.mdx` file per post in this directory. The filename becomes the URL slug:
+
+```txt
+src/content/blogs/freshman-year.mdx -> /blogs/freshman-year
+```
+
+Each post needs frontmatter at the top:
 
 ```mdx
 ---
 title: "Post title"
-date: "2026-05-15"
+date: "2026-05-20"
 tags: ["Personal", "CMU"]
-summary: "Short dek for lists and previews."
+summary: "Short summary for cards and previews."
+type: "Essay"
 ---
+
+Write the post here.
 ```
 
-Posts under 500 words should render as notes. Posts with 500 words or more should render as essays.
+`type` can be `Essay` or `Note`. If it is omitted, posts with 500+ words are essays and shorter posts are notes.

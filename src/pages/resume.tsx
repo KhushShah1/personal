@@ -87,7 +87,7 @@ export default function Resume() {
               Carnegie Mellon University | B.S. in Computer Science & Mathematics | Expected May 2028
             </p>
             <p className="mt-2 text-sm tracking-tight text-warm-600">
-              khushshah2007@gmail.com | khush.site | linkedin.com/in/khush--shah | github.com/khushshah1
+              khushs@cmu.edu | khush.site | linkedin.com/in/khush--shah | github.com/khushshah1
             </p>
             <p className="mt-2 text-sm tracking-tight text-warm-600">
               Fully work authorized | U.S. Citizen
