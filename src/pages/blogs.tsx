@@ -22,7 +22,7 @@ export default function Blogs({ posts, tags, noteCount, essayCount }: BlogIndexD
       </Head>
       <PageHeader
         title="blogs"
-        kicker="thinking out loud"
+        kicker="coming soon!"
         accentClass="text-warm-700"
         accentLineClass="bg-warm-700"
         description="Notes and essays on AI, research, college, software, math, and the occasional personal tangent."

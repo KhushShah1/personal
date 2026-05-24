@@ -49,7 +49,7 @@ export default function Resume() {
       </Head>
       <PageHeader
         title="resume"
-        kicker="the whole picture"
+        kicker="long story short"
         accentClass="text-purple-700"
         accentLineClass="bg-purple-500"
         description="A web-native version of my resume."

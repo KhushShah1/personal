@@ -83,7 +83,7 @@ export default function Projects() {
       </Head>
       <PageHeader
         title="projects"
-        kicker="a record of building things"
+        kicker="some of the things I've built"
         accentClass="text-sky-700"
         accentLineClass="bg-sky-500"
         description="Research, software, hackathon projects, and technical curriculum that turned into real products, papers, and side projects that have helped me gain tons of valuable experience."

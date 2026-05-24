@@ -17,7 +17,7 @@ export default function Leadership() {
       </Head>
       <PageHeader
         title="leadership"
-        kicker="a record of leading them"
+        kicker="some of the places I've led"
         accentClass="text-orange-700"
         accentLineClass="bg-orange-500"
         description="A few of the teams, organizations, and classrooms where I've led, taught, and built things alongside others to create massive impact."

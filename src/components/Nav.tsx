@@ -41,16 +41,16 @@ const SOCIAL_LINK_CLASS =
 
 const NAV_ANIMATION_MS = 1000;
 
-function openRandomHref(event: React.MouseEvent<HTMLAnchorElement>, hrefs: string[]) {
-  event.preventDefault();
-  const href = hrefs[Math.floor(Math.random() * hrefs.length)];
-  window.open(href, "_blank", "noopener,noreferrer");
+function getRandomHref(hrefs: string[]) {
+  return hrefs[Math.floor(Math.random() * hrefs.length)];
 }
 
 export default function Nav() {
   const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
   const [animDone, setAnimDone] = useState(false);
+  const [surpriseOpened, setSurpriseOpened] = useState(false);
+  const [showAgainPrompt, setShowAgainPrompt] = useState(false);
 
   useEffect(() => {
     const t = setTimeout(() => setAnimDone(true), NAV_ANIMATION_MS);
@@ -62,6 +62,46 @@ export default function Nav() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    if (!surpriseOpened) return;
+
+    const onReturn = () => {
+      if (!document.hidden) setShowAgainPrompt(true);
+    };
+
+    window.addEventListener("focus", onReturn);
+    document.addEventListener("visibilitychange", onReturn);
+    return () => {
+      window.removeEventListener("focus", onReturn);
+      document.removeEventListener("visibilitychange", onReturn);
+    };
+  }, [surpriseOpened]);
+
+  useEffect(() => {
+    if (!showAgainPrompt) return;
+
+    const timeout = window.setTimeout(() => setShowAgainPrompt(false), 5_000);
+    const onPointerDown = (event: PointerEvent) => {
+      const target = event.target;
+      if (target instanceof Element && target.closest("[data-surprise-link]")) return;
+      setShowAgainPrompt(false);
+    };
+
+    document.addEventListener("pointerdown", onPointerDown);
+    return () => {
+      window.clearTimeout(timeout);
+      document.removeEventListener("pointerdown", onPointerDown);
+    };
+  }, [showAgainPrompt]);
+
+  const openRandomHref = (event: React.MouseEvent<HTMLAnchorElement>, hrefs: string[]) => {
+    event.preventDefault();
+    const href = getRandomHref(hrefs);
+    setSurpriseOpened(true);
+    setShowAgainPrompt(false);
+    window.open(href, "_blank", "noopener,noreferrer");
+  };
 
   const socialHidden = scrolled && animDone;
   const socialStyle: React.CSSProperties = {
@@ -94,16 +134,22 @@ export default function Nav() {
         {socialLinks.map((link) => {
           if (link.randomHrefs) {
             return (
-              <a
-                key={link.label}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(event) => openRandomHref(event, link.randomHrefs ?? [])}
-                className={SOCIAL_LINK_CLASS}
-              >
-                {link.label}
-              </a>
+              <span key={link.label} className="relative flex" data-surprise-link>
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(event) => openRandomHref(event, link.randomHrefs ?? [])}
+                  className={SOCIAL_LINK_CLASS}
+                >
+                  {link.label}
+                </a>
+                {showAgainPrompt && !socialHidden && (
+                  <span className="pointer-events-none absolute left-1/2 top-full mt-1 -translate-x-1/2 rounded border border-warm-300 bg-warm-50 px-2.5 py-1 text-sm leading-none tracking-tight text-warm-600 shadow-skeuo">
+                    Again?
+                  </span>
+                )}
+              </span>
             );
           }
           if (link.download) {
