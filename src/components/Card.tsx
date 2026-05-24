@@ -41,11 +41,16 @@ export default function Card({
           <span className={`inline-block ${fadeClass}`}>{organization}</span>
         </span>
         {href && (
-          <div
-            aria-hidden
-            className="flex h-8 w-8 items-center justify-center rounded-full transition-colors group-hover:bg-warm-50 group-hover:text-warm-900 group-hover:shadow-skeuo group-focus-within:bg-warm-50 group-focus-within:text-warm-900 group-focus-within:shadow-skeuo"
-          >
-            <ArrowIcon />
+          <div className="flex items-center gap-2 pl-3">
+            <span className="hidden tracking-tight text-warm-600 sm:inline">
+              Click on me to learn more!
+            </span>
+            <div
+              aria-hidden
+              className="flex h-8 w-8 items-center justify-center rounded-full transition-colors group-hover:bg-warm-50 group-hover:text-warm-900 group-hover:shadow-skeuo group-focus-within:bg-warm-50 group-focus-within:text-warm-900 group-focus-within:shadow-skeuo"
+            >
+              <ArrowIcon />
+            </div>
           </div>
         )}
       </div>
@@ -57,7 +62,7 @@ export default function Card({
           {description && (
             <ParagraphList
               paragraphs={description}
-              className={`mt-3 space-y-3 text-[16Cpx] leading-relaxed tracking-tight text-warm-600 ${clamp ? "line-clamp-6" : ""}`}
+              className={`mt-3 space-y-3 text-[16px] leading-relaxed tracking-tight text-warm-600 ${clamp ? "line-clamp-6" : ""}`}
             />
           )}
         </div>

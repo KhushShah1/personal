@@ -10,7 +10,7 @@ export default function CarouselButton({ direction, onClick }: CarouselButtonPro
       type="button"
       onClick={onClick}
       aria-label={isPrev ? "Previous item" : "Next item"}
-      className={`absolute ${isPrev ? "left-0" : "right-0"} top-1/2 z-10 -translate-y-1/2 rounded text-warm-900/25 transition-colors hover:text-warm-900/60 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-200`}
+      className={`absolute ${isPrev ? "-left-8 sm:-left-12" : "-right-8 sm:-right-12"} top-1/2 z-10 -translate-y-1/2 rounded text-warm-900/25 transition-colors hover:text-warm-900/60 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-200`}
     >
       <svg
         className="h-10 w-10 sm:h-14 sm:w-14"
