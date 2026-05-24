@@ -1,10 +1,13 @@
 import Head from "next/head";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
 import { resumeSections } from "@/data/resume";
 
 const resumePdfHref = "/khush-shah-resume.pdf";
+const resumeContactLinkClass =
+  "rounded underline-offset-4 transition hover:text-warm-900 hover:underline focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-purple-200";
 
 export default function Resume() {
   const [activeSection, setActiveSection] = useState(resumeSections[0].id);
@@ -84,11 +87,37 @@ export default function Resume() {
               Khush Shah
             </h2>
             <p className="mt-2 text-sm tracking-tight text-warm-600">
-              Carnegie Mellon University | B.S. in Computer Science & Mathematics | Expected May 2028
+              Carnegie Mellon University | B.S. in Computer Science & Mathematics | Expected May 2029
             </p>
-            <p className="mt-2 text-sm tracking-tight text-warm-600">
-              khushs@cmu.edu | khush.site | linkedin.com/in/khush--shah | github.com/khushshah1
-            </p>
+            <div className="mt-2 flex flex-wrap justify-center gap-x-2 gap-y-1 text-sm tracking-tight text-warm-600">
+              <span>(650) 404-7748</span>
+              <span>|</span>
+              <a href="mailto:khushs@cmu.edu" className={resumeContactLinkClass}>
+                khushs@cmu.edu
+              </a>
+              <span>|</span>
+              <Link href="/" className={resumeContactLinkClass}>
+                khush.site
+              </Link>
+              <span>|</span>
+              <a
+                href="https://linkedin.com/in/khush--shah/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={resumeContactLinkClass}
+              >
+                linkedin.com/in/khush--shah
+              </a>
+              <span>|</span>
+              <a
+                href="https://github.com/KhushShah1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={resumeContactLinkClass}
+              >
+                github.com/khushshah1
+              </a>
+            </div>
             <p className="mt-2 text-sm tracking-tight text-warm-600">
               Fully work authorized | U.S. Citizen
             </p>
@@ -123,6 +152,18 @@ export default function Resume() {
                           ))}
                         </ul>
                       )}
+                      {entry.subEntries?.map((subEntry) => (
+                        <div key={subEntry.title} className="mt-4 rounded-md border border-warm-300 bg-warm-50/60 p-4">
+                          <h4 className="font-serif text-lg font-light leading-tight text-warm-900">
+                            {subEntry.title}
+                          </h4>
+                          <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed tracking-tight text-warm-700">
+                            {subEntry.bullets.map((bullet) => (
+                              <li key={bullet}>{bullet}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
                     </div>
                   ))}
                 </div>

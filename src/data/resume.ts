@@ -1,8 +1,14 @@
+export type ResumeSubEntry = {
+  title: string;
+  bullets: string[];
+};
+
 export type ResumeEntry = {
   title: string;
   organization: string;
   dates?: string;
   bullets: string[];
+  subEntries?: ResumeSubEntry[];
 };
 
 export type ResumeSection = {
@@ -19,7 +25,7 @@ export const resumeSections: ResumeSection[] = [
       {
         title: "B.S. in Computer Science & Mathematics",
         organization: "Carnegie Mellon University",
-        dates: "Expected May 2028",
+        dates: "Expected May 2029",
         bullets: [
           "Relevant classes: Machine Learning, Data Structures & Algorithms, Competition Programming, Computer Systems, Linear Algebra, Multivariable Calculus, Differential Equations.",
           "Focus areas: Machine Learning, Artificial Intelligence, Backend Systems, Data Structures & Algorithms.",
@@ -67,11 +73,18 @@ export const resumeSections: ResumeSection[] = [
         organization: "CASI",
         dates: "2025 - Present",
         bullets: [
-          "Participated in a technical AI safety research reading group, studying fundamentals of ML papers and alignment techniques including transformers, mechanistic interpretability, and RLHF.",
+          "Participated in a technical AI safety research reading group, studying fundamentals of ML papers and alignment techniques including transformers in depth, mechanistic interpretability, and RLHF.",
           "Co-leading a 3-person research project on AI safety alignment robustness, producing empirical research.",
-          "Used LAT-extracted RepE vectors and Hessian eigenvector analysis to show safety concepts occupy lower-rank, higher-curvature subspaces than capability directions.",
-          "Showed benign fine-tuning preferentially aligns with fragile safety directions, with representational rank and layer depth as independent fragility predictors.",
-          "Built a predictive framework ranking DPO versus PPO-RLHF alignment robustness by geometric properties, validated on HarmBench across LLaMA, Mistral, and Qwen.",
+        ],
+        subEntries: [
+          {
+            title: "Geometric Framework for Predicting Fragility of LLM Safety Training Methods Research Paper",
+            bullets: [
+              "Used LAT-extracted RepE vectors and Hessian eigenvector analysis to show safety concepts occupy lower-rank, higher-curvature subspaces than capability directions.",
+              "Showed benign fine-tuning preferentially aligns with fragile safety directions, with representational rank and layer depth as independent fragility predictors.",
+              "Built a predictive framework ranking DPO versus PPO-RLHF alignment robustness by geometric properties, validated on HarmBench across LLaMA, Mistral, and Qwen.",
+            ],
+          },
         ],
       },
       {
@@ -79,19 +92,19 @@ export const resumeSections: ResumeSection[] = [
         organization: "ScottyLabs Tech Team",
         dates: "2025 - Present",
         bullets: [
-          "Built an automated Rust system to query CMU APIs and recursively discover related course resources.",
-          "Wrote Python ETL to parse and normalize data while maintaining Postgres schema and records.",
+          "Built automated Rust system to query CMU APIs and recursively discover related course resources.",
+          "Wrote Python ETL to parse and normalize data and maintain Postgres schema and records.",
           "Exposed processed datasets to the frontend through structured JSON and CSV endpoints.",
-          "Rebuilt the web app in TypeScript and React using TanStack Router; the platform is used by hundreds of CMU students.",
+          "Rebuilt the web app in TypeScript and React using TanStack Router; platform used by 100s of CMU students.",
         ],
       },
       {
         title: "Stock Price Forecasting Model",
-        organization: "UC Davis COSMOS",
-        dates: "July 2024",
+        organization: "Team Lead - UC Davis COSMOS",
+        dates: "July 2024 - August 2024",
         bullets: [
           "Implemented ML models from scratch in Python using only NumPy, deriving forward and backpropagation manually from calculus and linear algebra primitives.",
-          "Led a 5-person team supervised-fine-tuning sentiment-analysis models for stock-price forecasting; outperformed baselines and presented results at the COSMOS Showcase.",
+          "Led 5-person team supervised-fine-tuning sentiment-analysis models for stock-price forecasting; outperformed baselines and presented results at COSMOS Showcase.",
         ],
       },
     ],
@@ -103,14 +116,16 @@ export const resumeSections: ResumeSection[] = [
       {
         title: "Organizer & Sponsorship Lead",
         organization: "Los Altos Hacks",
+        dates: "2021 - 2025",
         bullets: [
           "Organized the world's largest high-school hackathon and raised $15K+ in sponsorships.",
-          "Gave speeches to 1,000+ students and mentored many new members.",
+          "Gave speeches to 1000+ students and mentored many new members.",
         ],
       },
       {
         title: "Senior VP",
         organization: "Computer Engineers of the Next Generation (CENG)",
+        dates: "2022 - 2025",
         bullets: [
           "Managed 100+ volunteers teaching 24+ coding classes in Python, Java, and JavaScript to underserved schools.",
           "Earned the Presidential Volunteer Service Award for 200+ service hours in a single year.",
