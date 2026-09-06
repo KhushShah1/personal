@@ -28,6 +28,6 @@ A personal site on who I am, some stuff I've done, things I've built, and what I
 
 <div align="center">
 
-**Found a bug? [Let me know!](mailto:khushs@cmu.edu)**
+**Found a bug? [Let me know!](mailto:khushs@cmu.edu?subject=I%20found%20a%20bug%20in%20your%20personal%20website!)**
 
 </div>
