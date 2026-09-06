@@ -112,15 +112,19 @@ export default function Home() {
               <InlineLink href="https://cmuaisafety.com" color="sky" external>
                 CASI
               </InlineLink>
-              . I also help run{" "}
+              . I also build AI agents at{" "}
+              <InlineLink href="https://maximor.ai" color="orange" external>
+                Maximor
+              </InlineLink>
+              , helped run{" "}
               <InlineLink href="https://cmucourses.com" color="orange" external>
                 CMU Courses
               </InlineLink>{" "}
               at{" "}
               <InlineLink href="https://scottylabs.org" color="purple" external>
                 ScottyLabs
-              </InlineLink>
-              , and try to get up to a bunch more{" "}
+              </InlineLink>{" "}
+              last year, and try to get up to a bunch more{" "}
               <InlineLink href="/projects" color="lime">
                 cool stuff
               </InlineLink>

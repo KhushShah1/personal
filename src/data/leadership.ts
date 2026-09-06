@@ -9,7 +9,7 @@ export type LeadershipPost = {
 
 export const leadershipStats = [
   { value: "1,000+", label: "students taught" },
-  { value: "$15K+", label: "raised" },
+  { value: "$20K+", label: "raised" },
   { value: "50+", label: "person teams led" },
   { value: "500+", label: "hours volunteered" },
 ];
@@ -20,9 +20,9 @@ export const leadership: LeadershipPost[] = [
     name: "Organizer & Sponsorship Lead",
     date: "Sep 2021 - May 2025",
     description:
-      "Organized the world's largest high-school hackathon from 2021-2025. Raised $15K+ in sponsorships, gave speeches to 1000+ students, and mentored many new members.",
+      "Organized the world's largest high-school hackathon from 2021-2025. Raised $20K+ in sponsorships, gave speeches to 1000+ students, and mentored many new members.",
     longDescription: [
-      "I was one of the main organizers of Los Altos Hacks, which at the time was the world's largest high-school hackathon. Beyond general organization, I led and arranged sponsorships for the hackathon, personally raising over $15,000 by closely working with professionals across dozens of companies.",
+      "I was one of the main organizers of Los Altos Hacks, which at the time was the world's largest high-school hackathon. Beyond general organization, I led and arranged sponsorships for the hackathon, personally raising over $20,000 by closely working with professionals across dozens of companies.",
       "I was also responsible for the opening and closing ceremonies over the four years I was an organizer, giving speeches to 1,000+ attendees. Outside of the event itself, I spent countless hours personally mentoring new members of the organizing team.",
     ],
     href: "https://losaltoshacks.com",
