@@ -14,3 +14,11 @@ pnpm-debug.log*
 .DS_Store
 coverage/
 tsconfig.tsbuildinfo
+
+# LaTeX build artifacts (resume/resume.tex)
+resume/*.aux
+resume/*.fdb_latexmk
+resume/*.fls
+resume/*.log
+resume/*.out
+public/*.synctex.gz

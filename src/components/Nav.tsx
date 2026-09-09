@@ -32,7 +32,7 @@ const socialLinks: SocialLink[] = [
   { href: "mailto:khushs@cmu.edu", label: "Email" },
   { href: "https://linkedin.com/in/khush--shah/", label: "LinkedIn" },
   { href: "https://instagram.com/khush.shah_/", label: "Instagram" },
-  { href: "/khush-shah-resume.pdf", label: "Resume", download: true },
+  { href: "/resume.pdf", label: "Resume", download: true },
   { href: surpriseUrls[0], label: "Surprise!", randomHrefs: surpriseUrls },
 ];
 
@@ -157,7 +157,7 @@ export default function Nav() {
               <a
                 key={link.label}
                 href={link.href}
-                download
+                download="khush-shah-resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={SOCIAL_LINK_CLASS}

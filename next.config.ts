@@ -5,6 +5,15 @@ const isProduction = process.env.NODE_ENV === "production";
 const nextConfig: NextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
+  async redirects() {
+    return [
+      {
+        source: "/khush-shah-resume.pdf",
+        destination: "/resume.pdf",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

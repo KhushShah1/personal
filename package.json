@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "resume": "latexmk -pdf -interaction=nonstopmode -file-line-error -synctex=1 -auxdir=resume -outdir=public resume/resume.tex"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
