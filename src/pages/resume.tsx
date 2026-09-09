@@ -153,10 +153,17 @@ export default function Resume() {
                         </ul>
                       )}
                       {entry.subEntries?.map((subEntry) => (
-                        <div key={subEntry.title} className="mt-4 rounded-md border border-warm-300 bg-warm-50/60 p-4">
-                          <h4 className="font-serif text-lg font-light leading-tight text-warm-900">
-                            {subEntry.title}
-                          </h4>
+                        <div key={subEntry.title} className="mt-5 pl-5">
+                          <div className="grid gap-1 sm:grid-cols-[1fr_auto] sm:items-start">
+                            <h4 className="font-serif text-base font-light leading-tight text-warm-900">
+                              {subEntry.title}
+                            </h4>
+                            {subEntry.dates && (
+                              <p className="text-sm tracking-tight text-warm-500 sm:text-right">
+                                {subEntry.dates}
+                              </p>
+                            )}
+                          </div>
                           <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed tracking-tight text-warm-700">
                             {subEntry.bullets.map((bullet) => (
                               <li key={bullet}>{bullet}</li>
