@@ -58,7 +58,7 @@ export default function Resume() {
         <aside className="sticky top-20 z-10 mb-4 rounded-lg border border-purple-950/10 bg-warm-50/85 p-3 shadow-skeuo backdrop-blur lg:self-start">
           <a
             href={resumePdfHref}
-            download="khush-shah-resume.pdf"
+            download="Khush Shah - Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="mb-3 block rounded-md bg-purple-700 px-4 py-3 text-center text-sm font-medium tracking-tight text-white transition hover:bg-purple-800 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-purple-200"

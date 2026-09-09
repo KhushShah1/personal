@@ -157,7 +157,7 @@ export default function Nav() {
               <a
                 key={link.label}
                 href={link.href}
-                download="khush-shah-resume.pdf"
+                download="Khush Shah - Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={SOCIAL_LINK_CLASS}
