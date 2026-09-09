@@ -9,7 +9,7 @@
         "-interaction=nonstopmode",
         "-file-line-error",
         "-pdf",
-        "-auxdir=%DIR%",
+        "-auxdir=%TMPDIR%",
         "-outdir=%OUTDIR%",
         "%DOC%"
       ],

@@ -15,10 +15,5 @@ pnpm-debug.log*
 coverage/
 tsconfig.tsbuildinfo
 
-# LaTeX build artifacts (resume/resume.tex)
-resume/*.aux
-resume/*.fdb_latexmk
-resume/*.fls
-resume/*.log
-resume/*.out
+# LaTeX: latexmk drops the synctex file next to the PDF
 public/*.synctex.gz
