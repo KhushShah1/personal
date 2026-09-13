@@ -22,10 +22,11 @@ export const projects: Project[] = [
     dates: "February 2026",
     href: "https://arena.education",
     subCaption:
-      "Studied transformer and LLM fundamentals in depth, gaining an even deeper understanding of transformer models through hands-on work.",
+      "Completed the full ARENA (Alignment Research Engineer Accelerator) curriculum, implementing transformers, interpretability tooling, RL algorithms, and LLM evals from scratch.",
     longDescription: [
-      "I completed ARENA, a technical AI safety curriculum covering reinforcement learning, evaluations, interpretability, and alignment.",
-      "I implemented transformers from scratch and built a working knowledge of LLM internals, attention, RLHF, and alignment techniques.",
+      "I completed ARENA, a technical AI safety course spanning fundamentals, transformer interpretability, reinforcement learning, LLM evaluations, and alignment science.",
+      "I built a GPT-style transformer from scratch with autoregressive sampling, then used TransformerLens to locate induction heads and trace circuits in GPT-2, and worked through superposition, sparse autoencoders, and steering vectors.",
+      "On the RL side I implemented DQN and PPO agents and then RLHF on a transformer. For evals I designed model-written multiple-choice benchmarks, ran them with Inspect, and built and elicited LLM agents, before finishing with the alignment science chapter on emergent misalignment and LLM psychology.",
     ],
     size: "small",
     motif: "blocks",
