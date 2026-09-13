@@ -1,9 +1,4 @@
-%-------------------------
-% Resume in Latex
-% Author : Jake Gutierrez
-% Based off of: https://github.com/sb2nov/resume
-% License : MIT
-%------------------------
+% Template: Jake Gutierrez, based on https://github.com/sb2nov/resume (MIT)
 
 \documentclass[letterpaper,11pt]{article}
 
@@ -21,26 +16,12 @@
 \usepackage{tabularx}
 \input{glyphtounicode}
 
-
-%----------FONT OPTIONS----------
-% sans-serif
-% \usepackage[sfdefault]{FiraSans}
-% \usepackage[sfdefault]{roboto}
-% \usepackage[sfdefault]{noto-sans}
-% \usepackage[default]{sourcesanspro}
-
-% serif
-% \usepackage{CormorantGaramond}
-% \usepackage{charter}
-
-
 \pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
+\fancyhf{}
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
-% Adjust margins
 \addtolength{\oddsidemargin}{-0.5in}
 \addtolength{\evensidemargin}{-0.5in}
 \addtolength{\textwidth}{1in}
@@ -53,16 +34,13 @@
 \raggedright
 \setlength{\tabcolsep}{0in}
 
-% Sections formatting
 \titleformat{\section}{
   \vspace{-4pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
-% Ensure that generate pdf is machine readable/ATS parsable
+% keeps the PDF text machine-readable
 \pdfgentounicode=1
 
-%-------------------------
-% Custom commands
 \newcommand{\resumeItem}[1]{
   \item\small{
     {#1 \vspace{-2pt}}
@@ -100,13 +78,8 @@
 \newcommand{\resumeItemListStart}{\begin{itemize}[itemsep=0pt]}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
-%-------------------------------------------
-%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 \begin{document}
 
-%----------HEADING----------
 \begin{center}
     \textbf{\Huge \scshape Khush Shah} \\ \vspace{1pt}
     \small Carnegie Mellon University $|$ B.S. in Computer Science \& Mathematics $|$ Expected May 2029 \\ \vspace{1pt}
@@ -117,8 +90,6 @@
     \small Fully work authorized $|$ U.S. Citizen
 \end{center}
 
-
-%-----------EDUCATION-----------
 \section{Education}
   \resumeSubHeadingListStart
     \resumeSubheading
@@ -129,8 +100,6 @@
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
-
-%-----------EXPERIENCE-----------
 \section{Experience}
     \resumeSubHeadingListStart
 
@@ -167,8 +136,6 @@
 
     \resumeSubHeadingListEnd
 
-
-%-----------RESEARCH-----------
 \section{Research}
   \resumeSubHeadingListStart
 
@@ -182,8 +149,6 @@
 
   \resumeSubHeadingListEnd
 
-
-%-----------LEADERSHIP EXPERIENCE-----------
 \section{Leadership Experience}
   \resumeSubHeadingListStart
 
@@ -201,8 +166,6 @@
 
   \resumeSubHeadingListEnd
 
-
-%-----------TECHNICAL SKILLS-----------
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
@@ -213,6 +176,4 @@
     }}
  \end{itemize}
 
-
-%-------------------------------------------
 \end{document}

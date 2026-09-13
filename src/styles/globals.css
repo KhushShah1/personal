@@ -35,7 +35,6 @@ body {
   font-variation-settings: "opsz" 72;
 }
 
-/* Entrance animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;

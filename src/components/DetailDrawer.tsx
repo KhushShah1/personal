@@ -22,8 +22,7 @@ interface DetailDrawerProps {
   children: React.ReactNode;
 }
 
-// A native <dialog> opened with showModal() gives focus trapping, Escape-to-close,
-// and focus restoration for free; body scroll locking is handled in globals.css.
+// Scroll lock is in globals.css.
 export default function DetailDrawer({ open, ariaLabel, accent, onClose, children }: DetailDrawerProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
 

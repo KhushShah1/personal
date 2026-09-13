@@ -57,8 +57,7 @@ export default function Home() {
   const fadingRef = useRef(false);
   const barRef = useRef<HTMLDivElement>(null);
 
-  // The progress bar drives the card advance via onAnimationEnd, so its animation is
-  // started here, after hydration has attached that handler, rather than in the markup.
+  // Start the bar after hydration so onAnimationEnd is already wired.
   useEffect(() => {
     barRef.current?.classList.add("animate-progress");
   }, [index]);
