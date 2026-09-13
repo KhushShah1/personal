@@ -17,3 +17,6 @@ tsconfig.tsbuildinfo
 
 # LaTeX: latexmk drops the synctex file next to the PDF
 public/*.synctex.gz
+
+# Private working notes (repo is public)
+notes/
