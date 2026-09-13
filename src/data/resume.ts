@@ -60,7 +60,7 @@ export const resumeSections: ResumeSection[] = [
             dates: "August 2026 - Present",
             bullets: [
               "Building an agent harness to replace hard-coded Temporal accounting workflows: designing the context tree each run is seeded with and the layered policy system, from a frozen system prompt down to customer-authored directives, that can change without a deploy.",
-              "Migrating agents from parsing contracts to producing the finished accounting output themselves, checked against a strict schema before anything is saved, with a single human reviewer at the end.",
+              "Migrating agents from parsing contracts to doing the accounting work themselves through a draft, self-verify, and submit loop in their own sandbox, with a single human reviewer at the end.",
               "Building evals for the whole system so we can compare models and know when moving live customers to newer models is actually proven to help.",
             ],
           },
