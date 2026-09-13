@@ -13,21 +13,22 @@ const sizeClass: Record<Project["size"], string> = {
   small: "min-h-[18rem]",
 };
 
-function ProjectMotif({ motif }: { motif: Project["motif"] }) {
-  if (motif === "orbit") {
-    return (
-      <svg viewBox="0 0 260 220" className="absolute right-[-20%] bottom-[-12%] h-64 w-72 text-sky-300/40">
+const motifs: Record<Project["motif"], { offset: string; art: React.ReactNode }> = {
+  orbit: {
+    offset: "right-[-20%] bottom-[-12%]",
+    art: (
+      <>
         <circle cx="130" cy="110" r="68" fill="none" stroke="currentColor" strokeWidth="1.5" />
         <circle cx="130" cy="110" r="104" fill="none" stroke="currentColor" strokeWidth="1" />
         <circle cx="192" cy="82" r="11" fill="currentColor" />
         <path d="M48 150C96 92 160 70 228 86" fill="none" stroke="currentColor" strokeWidth="1.5" />
-      </svg>
-    );
-  }
-
-  if (motif === "mesh") {
-    return (
-      <svg viewBox="0 0 260 220" className="absolute right-[-18%] bottom-[-8%] h-64 w-72 text-sky-300/40">
+      </>
+    ),
+  },
+  mesh: {
+    offset: "right-[-18%] bottom-[-8%]",
+    art: (
+      <>
         <path d="M34 168 92 54l74 42 58-36-24 118-94-28z" fill="none" stroke="currentColor" strokeWidth="1.4" />
         <circle cx="92" cy="54" r="7" fill="currentColor" />
         <circle cx="166" cy="96" r="7" fill="currentColor" />
@@ -35,40 +36,51 @@ function ProjectMotif({ motif }: { motif: Project["motif"] }) {
         <circle cx="200" cy="178" r="7" fill="currentColor" />
         <circle cx="106" cy="150" r="7" fill="currentColor" />
         <circle cx="34" cy="168" r="7" fill="currentColor" />
-      </svg>
-    );
-  }
-
-  if (motif === "terminal") {
-    return (
-      <svg viewBox="0 0 260 220" className="absolute right-[-20%] bottom-[-10%] h-64 w-72 text-sky-300/40">
+      </>
+    ),
+  },
+  terminal: {
+    offset: "right-[-20%] bottom-[-10%]",
+    art: (
+      <>
         <rect x="34" y="42" width="192" height="136" rx="16" fill="none" stroke="currentColor" strokeWidth="1.5" />
         <path d="M34 76h192M70 116l28 22-28 22M116 158h64" fill="none" stroke="currentColor" strokeWidth="1.5" />
         <circle cx="58" cy="59" r="5" fill="currentColor" />
         <circle cx="78" cy="59" r="5" fill="currentColor" />
         <circle cx="98" cy="59" r="5" fill="currentColor" />
-      </svg>
-    );
-  }
-
-  if (motif === "blocks") {
-    return (
-      <svg viewBox="0 0 260 220" className="absolute right-[-18%] bottom-[-12%] h-64 w-72 text-sky-300/40">
+      </>
+    ),
+  },
+  blocks: {
+    offset: "right-[-18%] bottom-[-12%]",
+    art: (
+      <>
         <rect x="56" y="58" width="54" height="54" rx="10" fill="none" stroke="currentColor" strokeWidth="1.5" />
         <rect x="124" y="58" width="54" height="54" rx="10" fill="none" stroke="currentColor" strokeWidth="1.5" />
         <rect x="90" y="126" width="54" height="54" rx="10" fill="none" stroke="currentColor" strokeWidth="1.5" />
         <rect x="158" y="126" width="54" height="54" rx="10" fill="none" stroke="currentColor" strokeWidth="1.5" />
-      </svg>
-    );
-  }
+      </>
+    ),
+  },
+  chart: {
+    offset: "right-[-18%] bottom-[-10%]",
+    art: (
+      <>
+        <path d="M44 168h176M68 146l34-42 42 24 48-70" fill="none" stroke="currentColor" strokeWidth="1.5" />
+        <rect x="58" y="128" width="20" height="40" rx="5" fill="currentColor" />
+        <rect x="102" y="102" width="20" height="66" rx="5" fill="currentColor" />
+        <rect x="146" y="116" width="20" height="52" rx="5" fill="currentColor" />
+        <rect x="190" y="72" width="20" height="96" rx="5" fill="currentColor" />
+      </>
+    ),
+  },
+};
 
+function ProjectMotif({ motif }: { motif: Project["motif"] }) {
+  const { offset, art } = motifs[motif];
   return (
-    <svg viewBox="0 0 260 220" className="absolute right-[-18%] bottom-[-10%] h-64 w-72 text-sky-300/40">
-      <path d="M44 168h176M68 146l34-42 42 24 48-70" fill="none" stroke="currentColor" strokeWidth="1.5" />
-      <rect x="58" y="128" width="20" height="40" rx="5" fill="currentColor" />
-      <rect x="102" y="102" width="20" height="66" rx="5" fill="currentColor" />
-      <rect x="146" y="116" width="20" height="52" rx="5" fill="currentColor" />
-      <rect x="190" y="72" width="20" height="96" rx="5" fill="currentColor" />
+    <svg viewBox="0 0 260 220" className={`absolute ${offset} h-64 w-72 text-sky-300/40`}>
+      {art}
     </svg>
   );
 }

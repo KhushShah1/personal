@@ -14,29 +14,17 @@ const educationSection = resumeSections.find((section) => section.id === "educat
 const technicalSkillsSection = resumeSections.find(
   (section) => section.id === "technical-skills",
 );
-const cmuEducation = educationSection?.entries.find((entry) =>
-  entry.organization.startsWith("Carnegie Mellon University"),
-);
-const otherEducation = educationSection?.entries.filter(
-  (entry) => !entry.organization.startsWith("Carnegie Mellon University"),
-);
 
 const items = [
   {
     category: "Resume",
     organization: "Education",
     name: "Carnegie Mellon University",
-    description: [
-      [cmuEducation?.title, cmuEducation?.dates]
-        .filter(Boolean)
-        .join(". "),
-      ...(cmuEducation?.bullets ?? []),
-      ...(otherEducation?.map((entry) =>
-        [entry.organization, entry.title, entry.dates, ...entry.bullets]
-          .filter(Boolean)
-          .join(". "),
-      ) ?? []),
-    ],
+    description:
+      educationSection?.entries.flatMap((entry) => [
+        [entry.title, entry.dates].filter(Boolean).join(". "),
+        ...entry.bullets,
+      ]) ?? [],
     href: "/resume",
   },
   {

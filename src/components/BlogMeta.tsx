@@ -3,13 +3,11 @@ import type { BlogPostMeta } from "@/lib/blogs";
 type BlogMetaProps = {
   post: Pick<BlogPostMeta, "type" | "tags" | "readingMinutes">;
   showReadingTime?: boolean;
-  tagClassName?: string;
 };
 
 export default function BlogMeta({
   post,
   showReadingTime = false,
-  tagClassName = "rounded-full border border-warm-300 px-3 py-1 text-xs tracking-tight text-warm-600",
 }: BlogMetaProps) {
   return (
     <div className="flex flex-wrap gap-2">
@@ -22,7 +20,10 @@ export default function BlogMeta({
         </span>
       )}
       {post.tags.map((tag) => (
-        <span key={tag} className={tagClassName}>
+        <span
+          key={tag}
+          className="rounded-full border border-warm-300 px-3 py-1 text-xs tracking-tight text-warm-600"
+        >
           {tag}
         </span>
       ))}

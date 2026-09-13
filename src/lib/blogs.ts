@@ -120,16 +120,9 @@ export function getBlogPost(slug: string): BlogPost {
 }
 
 export function getBlogPostMeta(post: BlogPost): BlogPostMeta {
-  return {
-    slug: post.slug,
-    title: post.title,
-    date: post.date,
-    displayDate: post.displayDate,
-    tags: post.tags,
-    summary: post.summary,
-    type: post.type,
-    readingMinutes: post.readingMinutes,
-  };
+  const { content, ...meta } = post;
+  void content;
+  return meta;
 }
 
 export function getAllBlogPosts() {

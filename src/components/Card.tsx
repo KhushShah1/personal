@@ -11,7 +11,6 @@ interface CardProps {
   fading?: boolean;
   footer?: React.ReactNode;
   headerSize?: "sm" | "base";
-  clamp?: boolean;
 }
 
 export default function Card({
@@ -24,7 +23,6 @@ export default function Card({
   fading = false,
   footer,
   headerSize = "sm",
-  clamp = false,
 }: CardProps) {
   const fadeClass = `transition-opacity duration-400 ${fading ? "opacity-0" : "opacity-100"}`;
   const headerSizeClass = headerSize === "base" ? "text-base" : "text-sm";
@@ -62,7 +60,7 @@ export default function Card({
           {description && (
             <ParagraphList
               paragraphs={description}
-              className={`mt-3 space-y-3 text-[16px] leading-relaxed tracking-tight text-warm-600 ${clamp ? "line-clamp-6" : ""}`}
+              className="mt-3 space-y-3 text-[16px] leading-relaxed tracking-tight text-warm-600"
             />
           )}
         </div>
