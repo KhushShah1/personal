@@ -52,7 +52,7 @@ export const resumeSections: ResumeSection[] = [
               "Designed and deployed the company's first multi-agent system on Claude Managed Agents: a coordinator agent that delegates to subagents via cross-thread tool-call routing, replacing what had been separate Temporal workflows.",
               "Built the human-in-the-loop clarification system for agents in production: an answer/skip/rewind question lifecycle, durable persistence of agent runs and sessions, and a reviewer-facing UI.",
               "Wrote the managed-agent runtime behind it, which pauses live agent sessions at clarification tool calls, resumes them via Temporal, and stages session files to balance context delivery with performance.",
-              "Served as a forward-deployed engineer on a ~8-person team for a $1M client, shipping customer-requested features and bug fixes across the product.",
+              "Served as a forward-deployed engineer on a 6-person team that generated $2M in revenue, shipping customer-requested features and bug fixes across the product.",
             ],
           },
           {
@@ -123,8 +123,8 @@ export const resumeSections: ResumeSection[] = [
         organization: "Computer Engineers of the Next Generation (CENG)",
         dates: "2022 - 2025",
         bullets: [
-          "Managed 100+ volunteers teaching 24+ coding classes in Python, Java, and JavaScript to underserved schools, creating over $1M of impact.",
-          "Earned the Presidential Volunteer Service Award for 200+ service hours in a single year.",
+          "Managed 100+ volunteers and taught 24+ coding classes in Python, Java, and JavaScript to underserved schools, creating over $1M of impact.",
+          "Earned the Presidential Volunteer Service Award, affiliated through CENG, for 200+ service hours in a single year across my volunteer work.",
         ],
       },
     ],
