@@ -59,8 +59,9 @@ export const resumeSections: ResumeSection[] = [
             title: "Software Engineer (Part-Time)",
             dates: "August 2026 - Present",
             bullets: [
-              "Revising and extending the production fleet of Claude Managed Agents, continuing work begun during the internship: rewriting system prompts, tightening tool schemas, reworking input framing, and debugging live agent runs to improve reliability and output quality.",
-              "Designing the company's agent evaluation harness: regression evals that gate the migration of live customer workloads to newer models, plus orchestration tooling to run agents reproducibly.",
+              "Building an agent harness to replace hard-coded Temporal accounting workflows: designing the context tree each run is seeded with and the layered policy system, from a frozen system prompt down to customer-authored directives, that can change without a deploy.",
+              "Migrating agents from parsing contracts to producing the finished accounting output themselves, checked against a strict schema before anything is saved, with a single human reviewer at the end.",
+              "Building evals for the whole system so we can compare models and know when moving live customers to newer models is actually proven to help.",
             ],
           },
         ],
