@@ -14,11 +14,11 @@ const educationSection = resumeSections.find((section) => section.id === "educat
 const technicalSkillsSection = resumeSections.find(
   (section) => section.id === "technical-skills",
 );
-const cmuEducation = educationSection?.entries.find(
-  (entry) => entry.organization === "Carnegie Mellon University",
+const cmuEducation = educationSection?.entries.find((entry) =>
+  entry.organization.startsWith("Carnegie Mellon University"),
 );
 const otherEducation = educationSection?.entries.filter(
-  (entry) => entry.organization !== "Carnegie Mellon University",
+  (entry) => !entry.organization.startsWith("Carnegie Mellon University"),
 );
 
 const items = [
@@ -45,7 +45,7 @@ const items = [
     name: "Languages, tools, and ML",
     description:
       technicalSkillsSection?.entries
-        .map((entry) => [entry.organization, ...entry.bullets].join(": ")) ?? [],
+        .map((entry) => `${entry.organization}: ${entry.bullets.join(" ")}`) ?? [],
     href: "/resume",
   },
   ...projects.map((project) => ({

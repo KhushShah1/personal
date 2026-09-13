@@ -35,7 +35,7 @@ export const projects: Project[] = [
     organization: "Maximor",
     name: "Agentic AI Infrastructure @ Maximor",
     role: "Software Engineer",
-    dates: "June 2026 - present",
+    dates: "June 2026 - Present",
     href: "https://maximor.ai",
     subCaption:
       "Building the infrastructure behind production AI agents that automate accounting and finance workflows for enterprise finance teams.",
@@ -53,8 +53,8 @@ export const projects: Project[] = [
   {
     organization: "CASI",
     name: "Research @ Carnegie AI Safety Initiative",
-    role: "Core Member",
-    dates: "September 2025 - present",
+    role: "Core Member & Researcher",
+    dates: "September 2025 - Present",
     href: "https://cmuaisafety.com",
     subCaption:
       "Core member and researcher at CMU's largest AI research club, helping raise awareness about AI safety and improve AI literacy.",
@@ -70,7 +70,7 @@ export const projects: Project[] = [
     organization: "Research Paper",
     name: "Geometric Framework for LLM Safety Fragility",
     role: "Researcher",
-    dates: "April 2026 - present",
+    dates: "April 2026 - Present",
     href: "https://cmuaisafety.com",
     subCaption:
       "Writing a paper on why LLM safety-alignment is geometrically fragile under benign fine tuning. Targeting ICLR 2027 workshops.",
