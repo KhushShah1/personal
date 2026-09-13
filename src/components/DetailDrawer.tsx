@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 type DrawerAccent = "sky" | "orange";
 
@@ -18,55 +18,46 @@ interface DetailDrawerProps {
   open: boolean;
   ariaLabel: string;
   accent: DrawerAccent;
-  closeLabel: string;
   onClose: () => void;
   children: React.ReactNode;
 }
 
-export default function DetailDrawer({
-  open,
-  ariaLabel,
-  accent,
-  closeLabel,
-  onClose,
-  children,
-}: DetailDrawerProps) {
+// A native <dialog> opened with showModal() gives focus trapping, Escape-to-close,
+// and focus restoration for free; body scroll locking is handled in globals.css.
+export default function DetailDrawer({ open, ariaLabel, accent, onClose, children }: DetailDrawerProps) {
+  const dialogRef = useRef<HTMLDialogElement>(null);
+
   useEffect(() => {
-    if (!open) return;
-
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") onClose();
-    };
-
-    window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
-  }, [open, onClose]);
-
-  if (!open) return null;
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+    if (open && !dialog.open) dialog.showModal();
+    else if (!open && dialog.open) dialog.close();
+  }, [open]);
 
   return (
-    <div className="fixed inset-0 z-40">
-      <button
-        type="button"
-        aria-label={closeLabel}
-        onClick={onClose}
-        className="absolute inset-0 bg-warm-900/30 backdrop-blur-sm"
-      />
-      <aside
-        role="dialog"
-        aria-modal="true"
-        aria-label={ariaLabel}
-        className={`absolute top-0 right-0 flex h-full w-full max-w-xl animate-[drawerIn_260ms_ease_forwards] flex-col overflow-y-auto border-l ${accentClass[accent].border} bg-warm-50 p-8 shadow-2xl sm:p-10`}
-      >
-        <button
-          type="button"
-          onClick={onClose}
-          className={`mb-10 w-fit rounded-full border px-4 py-2 text-sm tracking-tight transition focus-visible:outline-none focus-visible:ring-4 ${accentClass[accent].button}`}
+    <dialog
+      ref={dialogRef}
+      aria-label={ariaLabel}
+      onClose={onClose}
+      onClick={(event) => {
+        if (event.target === event.currentTarget) onClose();
+      }}
+      className="fixed inset-0 m-0 h-full max-h-none w-full max-w-none bg-transparent p-0 text-warm-900 backdrop:bg-warm-900/30 backdrop:backdrop-blur-sm"
+    >
+      {open && (
+        <div
+          className={`absolute top-0 right-0 flex h-full w-full max-w-xl animate-[drawerIn_260ms_ease_forwards] flex-col overflow-y-auto border-l ${accentClass[accent].border} bg-warm-50 p-8 shadow-2xl sm:p-10`}
         >
-          Close
-        </button>
-        {children}
-      </aside>
-    </div>
+          <button
+            type="button"
+            onClick={onClose}
+            className={`mb-10 w-fit cursor-pointer rounded-full border px-4 py-2 text-sm tracking-tight transition focus-visible:outline-none focus-visible:ring-4 ${accentClass[accent].button}`}
+          >
+            Close
+          </button>
+          {children}
+        </div>
+      )}
+    </dialog>
   );
 }

@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
 import { resumeSections } from "@/data/resume";
 
@@ -42,7 +41,7 @@ export default function Resume() {
   }, []);
 
   return (
-    <Layout>
+    <>
       <Head>
         <title>Resume</title>
       </Head>
@@ -123,7 +122,7 @@ export default function Resume() {
           </header>
           <div className="divide-y divide-warm-300">
             {resumeSections.map((section) => (
-              <section key={section.id} id={section.id} className="scroll-mt-28 py-8">
+              <section key={section.id} id={section.id} className="scroll-mt-52 py-8 lg:scroll-mt-28">
                 <h2 className="mb-5 flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.18em] text-purple-700">
                   <span className="h-2 w-2 rounded-full bg-purple-500" />
                   {section.title}
@@ -178,6 +177,6 @@ export default function Resume() {
           </div>
         </article>
       </div>
-    </Layout>
+    </>
   );
 }

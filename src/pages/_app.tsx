@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import type { AppProps } from "next/app";
+import Layout from "@/components/Layout";
 import Head from "next/head";
 import { Inter, Fraunces } from "next/font/google";
 import { useRouter } from "next/router";
@@ -43,7 +44,9 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/icon.png" />
       </Head>
       <div className={`${inter.variable} ${fraunces.variable} font-sans`}>
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
         <Analytics />
       </div>
     </>

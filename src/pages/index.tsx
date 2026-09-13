@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-import Layout from "@/components/Layout";
 import Card from "@/components/Card";
 import CarouselButton from "@/components/CarouselButton";
 import InlineLink from "@/components/InlineLink";
@@ -56,6 +55,13 @@ export default function Home() {
   const [index, setIndex] = useState(0);
   const [fading, setFading] = useState(false);
   const fadingRef = useRef(false);
+  const barRef = useRef<HTMLDivElement>(null);
+
+  // The progress bar drives the card advance via onAnimationEnd, so its animation is
+  // started here, after hydration has attached that handler, rather than in the markup.
+  useEffect(() => {
+    barRef.current?.classList.add("animate-progress");
+  }, [index]);
 
   const goTo = useCallback((direction: number) => {
     if (fadingRef.current) return;
@@ -68,15 +74,10 @@ export default function Home() {
     }, FADE_MS);
   }, []);
 
-  useEffect(() => {
-    const timer = setTimeout(() => goTo(1), CYCLE_MS);
-    return () => clearTimeout(timer);
-  }, [index, goTo]);
-
   const current = items[index];
 
   return (
-    <Layout>
+    <>
       <div className="grid grid-cols-1 sm:grid-cols-2">
         <div className="px-1 pb-2 animate-card">
           <div className="h-full w-full px-4 pt-6 sm:px-8 sm:pt-6">
@@ -122,7 +123,7 @@ export default function Home() {
         </div>
 
         <div className="px-4 pt-2 pb-10 sm:pb-[10px]">
-          <div className="relative flex min-h-[calc(100vw-4rem)] sm:block sm:h-[calc(100vh-130px)] sm:min-h-0">
+          <div className="relative flex h-[60svh] sm:block sm:h-[calc(100vh-130px)]">
             <CarouselButton direction="prev" onClick={() => goTo(-1)} />
             <CarouselButton direction="next" onClick={() => goTo(1)} />
             <Card
@@ -137,14 +138,16 @@ export default function Home() {
               footer={
                 <div
                   key={index}
+                  ref={barRef}
                   style={{ animationDuration: `${CYCLE_MS}ms` }}
-                  className="h-0.5 bg-warm-800 animate-progress"
+                  onAnimationEnd={() => goTo(1)}
+                  className="h-0.5 w-0 bg-warm-800"
                 />
               }
             />
           </div>
         </div>
       </div>
-    </Layout>
+    </>
   );
 }

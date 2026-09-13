@@ -1,7 +1,6 @@
 import Head from "next/head";
 import { useState } from "react";
 import DetailDrawer from "@/components/DetailDrawer";
-import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
 import ParagraphList from "@/components/ParagraphList";
 import { leadership, leadershipStats } from "@/data/leadership";
@@ -11,7 +10,7 @@ export default function Leadership() {
   const [activePost, setActivePost] = useState<LeadershipPost | null>(null);
 
   return (
-    <Layout>
+    <>
       <Head>
         <title>Leadership</title>
       </Head>
@@ -39,12 +38,10 @@ export default function Leadership() {
       <section className="grid grid-cols-1 gap-3 pb-16 md:grid-cols-2 xl:grid-cols-5">
         {leadership.map((post, i) => {
           return (
-            <button
+            <article
               key={post.organization}
-              type="button"
-              onClick={() => setActivePost(post)}
               style={{ animationDelay: `${i * 55}ms` }}
-              className="group flex min-h-[22rem] flex-col justify-between rounded-lg border border-orange-950/10 bg-warm-100 p-6 text-left shadow-skeuo transition duration-300 hover:-translate-y-1 hover:border-orange-400 hover:bg-orange-50 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-orange-200 animate-card"
+              className="group relative flex min-h-[22rem] flex-col justify-between rounded-lg border border-orange-950/10 bg-warm-100 p-6 shadow-skeuo transition duration-300 hover:-translate-y-1 hover:border-orange-400 hover:bg-orange-50 focus-within:ring-4 focus-within:ring-orange-200 animate-card"
             >
               <div>
                 <p className="text-sm tracking-tight text-orange-700">
@@ -54,13 +51,19 @@ export default function Leadership() {
                   {post.date}
                 </p>
                 <h2 className="mt-2 font-serif-variation font-serif text-3xl font-light leading-tight text-warm-900">
-                  {post.name}
+                  <button
+                    type="button"
+                    onClick={() => setActivePost(post)}
+                    className="cursor-pointer text-left after:absolute after:inset-0 focus-visible:outline-none"
+                  >
+                    {post.name}
+                  </button>
                 </h2>
                 <p className="mt-5 text-sm leading-relaxed tracking-tight text-warm-600">
                   {post.description}
                 </p>
               </div>
-            </button>
+            </article>
           );
         })}
       </section>
@@ -68,7 +71,6 @@ export default function Leadership() {
         open={activePost !== null}
         ariaLabel={activePost?.name ?? "Leadership details"}
         accent="orange"
-        closeLabel="Close leadership details"
         onClose={() => setActivePost(null)}
       >
         {activePost && (
@@ -101,6 +103,6 @@ export default function Leadership() {
           </>
         )}
       </DetailDrawer>
-    </Layout>
+    </>
   );
 }

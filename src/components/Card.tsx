@@ -1,3 +1,4 @@
+import Link from "next/link";
 import ArrowIcon from "./ArrowIcon";
 import ParagraphList from "./ParagraphList";
 
@@ -26,7 +27,7 @@ export default function Card({
 }: CardProps) {
   const fadeClass = `transition-opacity duration-400 ${fading ? "opacity-0" : "opacity-100"}`;
   const headerSizeClass = headerSize === "base" ? "text-base" : "text-sm";
-  const containerClass = `group flex h-full min-h-[inherit] w-full flex-col overflow-hidden rounded-lg bg-warm-200 transition-colors focus-within:bg-warm-300 hover:bg-warm-300 animate-card${href ? " cursor-alias focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-200" : ""}`;
+  const containerClass = `group flex h-full min-h-[inherit] w-full flex-col overflow-hidden rounded-lg bg-warm-200 transition-colors focus-within:bg-warm-300 hover:bg-warm-300 animate-card${href ? " focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-200" : ""}`;
   const containerStyle = { animationDelay: `${delay}ms` };
 
   const inner = (
@@ -52,7 +53,7 @@ export default function Card({
           </div>
         )}
       </div>
-      <div className="grow overflow-hidden">
+      <div className="relative grow overflow-hidden after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-10 after:bg-linear-to-t after:from-warm-200 group-hover:after:from-warm-300 group-focus-within:after:from-warm-300">
         <div className={`px-5 pt-4 pb-8 ${fadeClass}`}>
           <h3 className="font-serif-variation font-serif text-2xl font-light text-warm-900">
             {name}
@@ -71,9 +72,9 @@ export default function Card({
 
   if (href) {
     return (
-      <a href={href} className={containerClass} style={containerStyle}>
+      <Link href={href} className={containerClass} style={containerStyle}>
         {inner}
-      </a>
+      </Link>
     );
   }
 

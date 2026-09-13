@@ -1,7 +1,6 @@
 import Head from "next/head";
 import { useState } from "react";
 import DetailDrawer from "@/components/DetailDrawer";
-import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
 import ParagraphList from "@/components/ParagraphList";
 import { projects } from "@/data/projects";
@@ -89,7 +88,7 @@ export default function Projects() {
   const [activeProject, setActiveProject] = useState<Project | null>(null);
 
   return (
-    <Layout>
+    <>
       <Head>
         <title>Projects</title>
       </Head>
@@ -102,12 +101,10 @@ export default function Projects() {
       />
       <section className="grid auto-rows-[minmax(18rem,auto)] grid-cols-1 gap-3 pb-16 md:grid-cols-3">
         {projects.map((project, i) => (
-          <button
+          <article
             key={project.name}
-            type="button"
-            onClick={() => setActiveProject(project)}
             style={{ animationDelay: `${i * 55}ms` }}
-            className={`group relative isolate flex overflow-hidden rounded-lg border border-sky-950/10 bg-warm-100 p-6 text-left shadow-skeuo transition duration-300 hover:-translate-y-1 hover:border-sky-400 hover:bg-sky-50 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sky-200 animate-card ${sizeClass[project.size]}`}
+            className={`group relative isolate flex overflow-hidden rounded-lg border border-sky-950/10 bg-warm-100 p-6 shadow-skeuo transition duration-300 hover:-translate-y-1 hover:border-sky-400 hover:bg-sky-50 focus-within:ring-4 focus-within:ring-sky-200 animate-card ${sizeClass[project.size]}`}
           >
             <ProjectMotif motif={project.motif} />
             <div className="relative z-10 flex h-full min-h-0 w-full flex-col justify-between gap-4">
@@ -122,21 +119,26 @@ export default function Projects() {
                   {project.role}
                 </p>
                 <h2 className="font-serif-variation font-serif text-3xl font-light leading-tight text-warm-900 md:text-4xl">
-                  {project.name}
+                  <button
+                    type="button"
+                    onClick={() => setActiveProject(project)}
+                    className="cursor-pointer text-left after:absolute after:inset-0 focus-visible:outline-none"
+                  >
+                    {project.name}
+                  </button>
                 </h2>
-                <p className="mt-5 max-w-xl translate-y-4 text-base leading-relaxed tracking-tight text-warm-700 opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100">
+                <p className="mt-5 max-w-xl translate-y-4 text-base leading-relaxed tracking-tight text-warm-700 opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:translate-y-0 group-focus-within:opacity-100">
                   {project.subCaption}
                 </p>
               </div>
             </div>
-          </button>
+          </article>
         ))}
       </section>
       <DetailDrawer
         open={activeProject !== null}
         ariaLabel={activeProject?.name ?? "Project details"}
         accent="sky"
-        closeLabel="Close project details"
         onClose={() => setActiveProject(null)}
       >
         {activeProject && (
@@ -172,6 +174,6 @@ export default function Projects() {
           </>
         )}
       </DetailDrawer>
-    </Layout>
+    </>
   );
 }

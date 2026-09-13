@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
 import BlogMeta from "@/components/BlogMeta";
-import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
 import { getBlogIndexData } from "@/lib/blogs";
 import type { BlogIndexData } from "@/lib/blogs";
@@ -16,7 +15,7 @@ export default function Blogs({ posts, tags, noteCount, essayCount }: BlogIndexD
   const featuredPost = posts[0];
 
   return (
-    <Layout>
+    <>
       <Head>
         <title>Blogs</title>
       </Head>
@@ -133,6 +132,6 @@ export default function Blogs({ posts, tags, noteCount, essayCount }: BlogIndexD
           )}
         </section>
       </section>
-    </Layout>
+    </>
   );
 }

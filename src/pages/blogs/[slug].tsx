@@ -4,7 +4,6 @@ import { MDXRemote } from "next-mdx-remote";
 import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import BlogMeta from "@/components/BlogMeta";
-import Layout from "@/components/Layout";
 import { getBlogPost, getBlogPostMeta, getBlogSlugs } from "@/lib/blogs";
 import type { BlogPostMeta } from "@/lib/blogs";
 
@@ -34,7 +33,7 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
 
 export default function BlogPost({ post, source }: BlogPostProps) {
   return (
-    <Layout>
+    <>
       <Head>
         <title>{post.title}</title>
         <meta name="description" content={post.summary} />
@@ -62,6 +61,6 @@ export default function BlogPost({ post, source }: BlogPostProps) {
           <MDXRemote {...source} />
         </div>
       </article>
-    </Layout>
+    </>
   );
 }
