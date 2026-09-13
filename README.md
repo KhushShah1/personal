@@ -12,13 +12,15 @@
 
 ## About Me
 
-Hi! My name is Khush, and I'm a ML researcher, computer science student, mathematician, and software developer.
+Hi! My name is Khush, and I'm an ML researcher, computer science student, mathematician, and software developer.
 
-Most of my time right now goes to my CS and Math classes at CMU, and a bunch of different technical AI safety research. The biggest thing I'm working on is a project at the [Carnegie AI Safety Initiative (CASI)](https://cmuaisafety.com) on the fragility of LLM safety training. I think AI safety is one of the most important problems humanity will face this decade, maybe the most important, and I'm obsessed with doing my part to ensure we get it right.
+Most of my time right now goes to my CS and Math classes at CMU, technical AI safety research, and my part-time work at Maximor. The two biggest things I'm working on are my project at the [Carnegie AI Safety Initiative (CASI)](https://cmuaisafety.com) on the fragility of LLM safety training, and the agent harness we're building at [Maximor](https://maximor.ai).
 
-Outside of research, I love to build. I was a full-stack dev on [cmucourses.com](https://cmucourses.com), a tool used by thousands of CMU students, where I worked across Rust, Python, SQL, JS, and TypeScript. I've done a handful of hackathons (not just for the prizes), picked up competitive programming for fun, and spent enough time with low-level and systems stuff to be comfortable with just about anything CS-related.
+I think AI safety is one of the most important problems humanity will face this decade, maybe the most important, and I'm obsessed with doing my part to ensure we get it right. I'm currently wrapping up my work at CASI and eager to keep doing research through fellowships. I also think the upside of AI capabilities is massive. At Maximor, which builds AI agents for enterprise finance teams, I joined as a summer intern, worked as a forward-deployed engineer on a 6-person team that generated $2M in revenue, then moved onto our AI agents. I now work part-time on the agent harness: context trees, layered markdown policy, and evals.
 
-I love learning across fields, and I think the best ideas tend to come from putting wildly different things together in unique and innovative ways. I always try to develop a deep fundamental understanding of whatever I'm working on - whether that's LLM internals, abstract math proofs, or anything else - before trying to connect the pieces from different puzzles.
+Previously, I was a full-stack dev on [cmucourses.com](https://cmucourses.com), a tool used by thousands of CMU students, working across Rust, Python, SQL, JS, and TypeScript. I've also done a handful of hackathons (not just for the prizes), picked up competitive programming for fun, and spent enough time with low-level and systems stuff to be comfortable with just about anything CS-related.
+
+Back in high school, I led sponsorships for Los Altos Hacks, then the world's largest high-school hackathon, and spent hundreds of hours tutoring, coaching, and volunteering in robotics and computer engineering at organizations like CENG, T² Robotics, and others.
 
 ## This Website
 
