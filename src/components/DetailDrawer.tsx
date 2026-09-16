@@ -41,7 +41,7 @@ export default function DetailDrawer({ open, ariaLabel, accent, onClose, childre
       onClick={(event) => {
         if (event.target === event.currentTarget) onClose();
       }}
-      className="fixed inset-0 m-0 h-full max-h-none w-full max-w-none bg-transparent p-0 text-warm-900 backdrop:bg-warm-900/30 backdrop:backdrop-blur-sm"
+      className="fixed inset-0 m-0 h-full max-h-none w-full max-w-none overflow-clip bg-transparent p-0 text-warm-900 backdrop:bg-warm-900/30 backdrop:backdrop-blur-sm"
     >
       {open && (
         <div
