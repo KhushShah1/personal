@@ -26,7 +26,7 @@ export const resumeSections: ResumeSection[] = [
       {
         title: "B.S. in Computer Science & Mathematics",
         organization: "Carnegie Mellon University, Pittsburgh, PA",
-        dates: "Expected May 2029",
+        dates: "Expected May 2028",
         bullets: [
           "Relevant classes: Deep Learning (Graduate Level), Machine Learning, Data Structures & Algorithms, Competition Programming, Computer Systems, Linear Algebra, Multivariable Calculus, Differential Equations.",
         ],

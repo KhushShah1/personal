@@ -85,7 +85,7 @@ export default function Resume() {
               Khush Shah
             </h2>
             <p className="mt-2 text-sm tracking-tight text-warm-600">
-              Carnegie Mellon University | B.S. in Computer Science & Mathematics | Expected May 2029
+              Carnegie Mellon University | B.S. in Computer Science & Mathematics | Expected May 2028
             </p>
             <div className="mt-2 flex flex-wrap justify-center gap-x-2 gap-y-1 text-sm tracking-tight text-warm-600">
               <span>(650) 404-7748</span>
